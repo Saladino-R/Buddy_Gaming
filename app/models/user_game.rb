@@ -1,3 +1,9 @@
 class UserGame < ApplicationRecord
   belongs_to :user
+  validates :language, presence: true
+  validates :level, presence: true
+  validates :mood, presence: true
+  validates :type, presence: true
+  validates :console, presence: true
+  # validates :game, presence: true
 end
