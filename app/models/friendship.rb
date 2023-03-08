@@ -5,8 +5,5 @@ class Friendship < ApplicationRecord
   #comparison: { other_than: :user_id } >>>  The user_id and the friend_id CAN'T be the same (You can't be friend with yourself)
   validates :friend_id, presence: true, uniqueness: { scope: :user_id }, comparison: { other_than: :user_id }
 
-  def new
-    @friendship = Friendship.new
-  end
 
 end

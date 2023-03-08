@@ -1,4 +1,3 @@
- <%#= link_to "Like button", results_path %>
  <h1>Matches</h1>
 <ul>
   <% @matches.each do |card| %>
@@ -7,5 +6,6 @@
   <li><%= card.user.city %></li>
   <li><%= card.user.bio %>Bio here:</li>
   <li><%= card.user.availability %></li> <br>
+  <%= link_to "Like", user_game_friendships_path(card.id), data: { turbo_method: :post } %>
   <% end %>
 </ul>
