@@ -9,7 +9,4 @@ class Friendship < ApplicationRecord
     @friendship = Friendship.new
   end
 
-
-
-
 end
