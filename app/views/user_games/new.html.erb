@@ -1,17 +1,20 @@
 <div class="container-games">
 <h1 class='text-center'>Choose your preferences 🎮</h1>
 
+<div class="form-games">
 <%= simple_form_for @user_game do |f| %>
   <%= render "user_games/card", games: @games %>
-  <%= f.input :language, collection: ["French", "Italian", "English", "German", "Japanese", "Chinese"] %>
-  <%= f.input :level,  collection: ["Casual", "Medium level", "Tryharder", "Hardcore Gameur"] %>
-  <%= f.input :mood, collection: ["Chill", "Tryhard"]%>
-  <%= f.input :mode, collection: ["1on1", "Team"] %>
-  <%= f.input :console, collection: ["PC", "PS4", "PS5", "Xbox One", "Xbox 360"] %>
-  <%= f.input :game_id, label:false, input_html: { class: 'd-none' } %>
-
-  <%= f.button :submit %>
+  <div class="margin-form">
+    <%= f.input :language, collection: ["French", "Italian", "English", "German", "Japanese", "Chinese"] %>
+    <%= f.input :level,  collection: ["Casual", "Medium level", "Tryharder", "Hardcore Gameur"] %>
+    <%= f.input :mood, collection: ["Chill", "Tryhard"]%>
+    <%= f.input :mode, collection: ["1on1", "Team"] %>
+    <%= f.input :console, collection: ["PC", "PS4", "PS5", "Xbox One", "Xbox 360"] %>
+    <%= f.input :game_id, label:false, input_html: { class: 'd-none' } %>
+    <i><%= f.button :submit, button_html: { class: 'btn-form'} %></i>
+  </div>
 <% end %>
+</div>
 </div>
 
 
