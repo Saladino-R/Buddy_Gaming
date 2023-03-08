@@ -41,5 +41,4 @@ usergame5 = UserGames.create(user_id: 5, game_id: 2, language: 'English', level:
 usergame6 = UserGames.create(user_id: 6, game_id: 2, language: 'English', level: 'Tryharder', mode: '1on1', mood: "Tryhard", console: 'PS4')
 usergame7 = UserGames.create(user_id: 7, game_id: 2, language: 'English', level: 'Tryharder', mode: '1on1', mood: "Tryhard", console: 'PS4')
 
-
 puts "Done #{UserGame.count}"
