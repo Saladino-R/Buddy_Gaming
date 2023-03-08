@@ -1,0 +1,19 @@
+<ul class='d-flex'>
+  <% @games.each do |game| %>
+  <li class='card m-1 game-card' style='width: 18rem' data-id=<%= game["id"] %>>
+    <%= image_tag(game["background_image"]) %>
+    <%= game["name"] %>
+    <%= game["rating"] %>/<%= game["rating_top"] %>
+  </li>
+  <% end %>
+</ul>
+
+<script>
+  const cards = document.querySelectorAll('.game-card')
+   cards.forEach(card => {
+     card.addEventListener("click",(event) => {
+       const gameInput = document.querySelector('#user_game_game_id')
+       gameInput.value = parseInt(card.dataset.id, 10)
+      })
+   });
+</script>

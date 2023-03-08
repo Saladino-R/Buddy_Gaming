@@ -51,7 +51,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_07_141049) do
     t.string "language"
     t.string "level"
     t.string "mood"
-    t.string "type"
+    t.string "mode"
     t.string "console"
     t.bigint "user_id", null: false
     t.integer "game_id"

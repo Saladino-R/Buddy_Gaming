@@ -4,7 +4,7 @@ class CreateUserGames < ActiveRecord::Migration[7.0]
       t.string :language
       t.string :level
       t.string :mood
-      t.string :type
+      t.string :mode
       t.string :console
       t.references :user, null: false, foreign_key: true
       t.integer :game_id
