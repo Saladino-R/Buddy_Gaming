@@ -30,3 +30,16 @@ friendship7 = Friendship.create( user_id: 3, friend_id: 5)
 friendship8 = Friendship.create( user_id: 2, friend_id: 5)
 
 puts "Done #{Friendship.count}"
+
+puts 'Creating USERGAMES'
+
+usergame1 = UserGames.create(user_id: 1, game_id: 1, language: 'French', level: 'Casual', mode: '1on1', mood: 'Chill', console: 'PS4')
+usergame2 = UserGames.create(user_id: 2, game_id: 1, language: 'French', level: 'Casual', mode: '1on1', mood: 'Chill', console: 'PS4')
+usergame3 = UserGames.create(user_id: 3, game_id: 1, language: 'French', level: 'Casual', mode: '1on1', mood: 'Chill', console: 'PS4')
+usergame4 = UserGames.create(user_id: 4, game_id: 1, language: 'French', level: 'Casual', mode: '1on1', mood: 'Chill', console: 'PS4')
+usergame5 = UserGames.create(user_id: 5, game_id: 2, language: 'English', level: 'Tryharder', mode: '1on1', mood: "Tryhard", console: 'PS4')
+usergame6 = UserGames.create(user_id: 6, game_id: 2, language: 'English', level: 'Tryharder', mode: '1on1', mood: "Tryhard", console: 'PS4')
+usergame7 = UserGames.create(user_id: 7, game_id: 2, language: 'English', level: 'Tryharder', mode: '1on1', mood: "Tryhard", console: 'PS4')
+
+
+puts "Done #{UserGame.count}"
