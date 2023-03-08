@@ -16,6 +16,11 @@ class UserGamesController < ApplicationController
     # redirect_to results_path(@user_game)
   end
 
+  def results
+    @user_game.user_id = current_user.id
+
+  end
+
   private
 
   def set_user
