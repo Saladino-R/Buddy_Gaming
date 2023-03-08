@@ -22,6 +22,7 @@ class UserGamesController < ApplicationController
      match = @user_games.where(game_id: my_choice.game_id).where(language: my_choice.language).where(level: my_choice.level).where(mode: my_choice.mode).where(mood: my_choice.mood).where(console: my_choice.console)
      @matches = match.where.not(user_id: current_user.id)
   end
+
   private
 
   def set_user

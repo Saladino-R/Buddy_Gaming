@@ -31,9 +31,7 @@ friendship8 = Friendship.create( user_id: 2, friend_id: 5)
 
 puts "Done #{Friendship.count}"
 
-
 puts 'Creating USERGAMES'
-
 
 usergame1 = UserGame.create(user_id: 1, game_id: 1, language: 'French', level: 'Casual', mode: '1on1', mood: 'Chill', console: 'PS4')
 usergame2 = UserGame.create(user_id: 2, game_id: 1, language: 'French', level: 'Casual', mode: '1on1', mood: 'Chill', console: 'PS4')
