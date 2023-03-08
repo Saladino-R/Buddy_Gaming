@@ -4,3 +4,11 @@
   <%= f.input :content %>
   <%= f.submit %>
 <% end %>
+
+<h1>Post list</h1>
+
+<% @posts.each do |post| %>
+  <p><%= post.user.nickname %> </p>
+  <p><%= post.created_at %> </p>
+  <p><%= post.content %> </p>
+<% end %>
