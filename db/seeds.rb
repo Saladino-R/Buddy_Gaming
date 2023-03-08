@@ -8,7 +8,7 @@
 
 puts 'Creating user'
 
-user1 = User.create(email: "email@email.ab", password: "123456", nickname: "Leon", birthday: Time.now, city: "Nice")
+user1 = User.create(email: "email@email.ab", password: "123456", nickname: "Leon", birthday: Time.now, city: "Nice", )
 user2 = User.create(email: "email@email.fr", password: "123456", nickname: "Luca", birthday: Time.now, city: "Milan")
 user3 = User.create(email: "email@email.it", password: "123456", nickname: "Elisa", birthday: Time.now, city: "Venice")
 user4 = User.create(email: "email@email.ro", password: "123456", nickname: "Marius", birthday: Time.now, city: "Bucharest")
