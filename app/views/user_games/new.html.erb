@@ -1,3 +1,9 @@
-<% @games.each do |game| %>
-  <%= game["name"] %>
-<% end %>
+<ul>
+  <% @games.each do |game| %>
+  <li>
+    <%= image_tag(game["background_image"]) %>
+    <%= game["name"] %>
+    <%= game["rating"] %>/<%= game["rating_top"] %>
+  </li>
+  <% end %>
+</ul>
