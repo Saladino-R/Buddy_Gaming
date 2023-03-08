@@ -3,7 +3,7 @@ class UserGame < ApplicationRecord
   validates :language, presence: true
   validates :level, presence: true
   validates :mood, presence: true
-  validates :type, presence: true
+  validates :mode, presence: true
   validates :console, presence: true
   # validates :game, presence: true
 end

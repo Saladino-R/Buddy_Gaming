@@ -1,0 +1,9 @@
+<%= simple_form_for @user_game do |f| %>
+  <%= render "user_games/card", games: @games %>
+  <%= f.input :language, collection: ["French", "Italian", "English", "German", "Japanese", "Chinese"] %>
+  <%= f.input :level,  collection: ["Casual", "Medium level", "Tryharder", "Hardcore Gameur"] %>
+  <%= f.input :mood, collection: ["Chill", "Tryhard"]%>
+  <%= f.input :type, collection: ["1on1", "Team"] %>
+  <%= f.input :console, collection: ["PC", "PS4", "PS5", "Xbox One", "Xbox 360"] %>
+  <%= f.button :submit %>
+<% end %>
