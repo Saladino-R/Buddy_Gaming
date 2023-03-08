@@ -16,6 +16,9 @@ class UserGamesController < ApplicationController
     # redirect_to results_path(@user_game)
   end
 
+  def results
+  end
+
   private
 
   def set_user
