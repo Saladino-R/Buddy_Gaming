@@ -26,9 +26,12 @@ class UserGamesController < ApplicationController
   end
 
   def call_api
+    # Key site
     key = "df3a4995e8e94f67b87a44e1a692e9fd"
+    # Site de l'api et lire le doc
     url = "https://api.rawg.io/api/games?key=#{key}"
     games_serialized = URI.open(url).read
+    # Parsing json de l'api
     games = JSON.parse(games_serialized)
   end
 end
