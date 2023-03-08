@@ -8,7 +8,7 @@
 
 puts 'Creating user'
 
-user1 = User.create(email: "email@email.ab", password: "123456", nickname: "Leon", birthday: Time.now, city: "Nice")
+user1 = User.create(email: "email@email.ab", password: "123456", nickname: "Leon", birthday: Time.now, city: "Nice", )
 user2 = User.create(email: "email@email.fr", password: "123456", nickname: "Luca", birthday: Time.now, city: "Milan")
 user3 = User.create(email: "email@email.it", password: "123456", nickname: "Elisa", birthday: Time.now, city: "Venice")
 user4 = User.create(email: "email@email.ro", password: "123456", nickname: "Marius", birthday: Time.now, city: "Bucharest")
@@ -32,6 +32,7 @@ friendship8 = Friendship.create( user_id: 2, friend_id: 5)
 puts "Done #{Friendship.count}"
 
 puts 'Creating USERGAMES'
+
 usergame1 = UserGame.create(user_id: 1, game_id: 1, language: 'French', level: 'Casual', mode: '1on1', mood: 'Chill', console: 'PS4')
 usergame2 = UserGame.create(user_id: 2, game_id: 1, language: 'French', level: 'Casual', mode: '1on1', mood: 'Chill', console: 'PS4')
 usergame3 = UserGame.create(user_id: 3, game_id: 1, language: 'French', level: 'Casual', mode: '1on1', mood: 'Chill', console: 'PS4')
@@ -39,4 +40,5 @@ usergame4 = UserGame.create(user_id: 4, game_id: 1, language: 'French', level: '
 usergame5 = UserGame.create(user_id: 5, game_id: 2, language: 'English', level: 'Tryharder', mode: '1on1', mood: "Tryhard", console: 'PS4')
 usergame6 = UserGame.create(user_id: 6, game_id: 2, language: 'English', level: 'Tryharder', mode: '1on1', mood: "Tryhard", console: 'PS4')
 usergame7 = UserGame.create(user_id: 7, game_id: 2, language: 'English', level: 'Tryharder', mode: '1on1', mood: "Tryhard", console: 'PS4')
+
 puts "Done #{UserGame.count}"

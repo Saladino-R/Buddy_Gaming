@@ -10,15 +10,17 @@ class UserGamesController < ApplicationController
   end
 
   def create
-    @user_game = UserGame.new(game_params)
-    @user_game.user_id = current_user.id
-    @user_game.save
-    # redirect_to results_path(@user_game)
+    user_game = UserGame.new(game_params)
+    user_game.user_id = current_user.id
+    user_game.save
+    redirect_to user_game_results_path(user_game.id)
   end
 
   def results
-    @user_game.user_id = current_user.id
-
+    @user_games = UserGame.all
+     my_choice = UserGame.find(params[:user_game_id])
+     match = @user_games.where(game_id: my_choice.game_id).where(language: my_choice.language).where(level: my_choice.level).where(mode: my_choice.mode).where(mood: my_choice.mood).where(console: my_choice.console)
+     @matches = match.where.not(user_id: current_user.id)
   end
 
   private

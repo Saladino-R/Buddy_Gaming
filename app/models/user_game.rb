@@ -5,5 +5,5 @@ class UserGame < ApplicationRecord
   validates :mood, presence: true
   validates :mode, presence: true
   validates :console, presence: true
-  # validates :game, presence: true
+  validates :game_id, presence: true
 end
