@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   get "dashboard", to: "pages#dashboard"
-  get "results", to: "user_games#results"
-  resources :user_games, only: %i[new create]
+  resources :user_games, only: %i[new create] do
+    get "results", to: "user_games#results"
+  end
   resources :posts, only: [:create]
 end

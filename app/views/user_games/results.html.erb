@@ -1,0 +1,11 @@
+ <%#= link_to "Like button", results_path %>
+ <h1>Matches</h1>
+<ul>
+  <% @matches.each do |card| %>
+  <li><%= card.user.nickname %></li>
+  <li><%= card.user.birthday %></li>
+  <li><%= card.user.city %></li>
+  <li><%= card.user.bio %>Bio here:</li>
+  <li><%= card.user.availability %></li> <br>
+  <% end %>
+</ul>
