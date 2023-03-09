@@ -11,4 +11,7 @@ Rails.application.routes.draw do
     post "/friendships", to: "friendships#create"
   end
   resources :posts, only: [:create]
+  resources :friendships, only: [:update]
+  #   post "/dashboard/:user_id", to: "pages#dashboard"
+
 end
