@@ -1,14 +1,7 @@
-<<<<<<< HEAD
-<ul class='d-flex'>
-  <% @games.first(2).each do |game| %>
-  <%# Array d'un hash donc [] %>
-  <li class='card m-1 game-card' style='width: 18rem' data-id=<%= game["id"] %>>
-=======
 <ul class='list-games'>
   <% @games.first(5).each do |game| %>
   <li class='card m-1 game-card' data-id=<%= game["id"] %>>
     <div class="card2">
->>>>>>> 264a477df2671a02d8ded4c7b161c8e835aa5b15
     <%= image_tag(game["background_image"]) %>
     <%= game["name"] %>
     <%= game["rating"] %>/<%= game["rating_top"] %>
@@ -16,37 +9,3 @@
   </li>
   <% end %>
 </ul>
-<<<<<<< HEAD
-
-
-<div id="card" class="card">
-  <div class="content">
-    <ul class='d-flex'>
-  <% @games.first(2).each do |game| %>
-  <%# Array d'un hash donc [] %>
-  <li class='card m-1 game-card' style='width: 18rem' data-id=<%= game["id"] %>>
-    <%= image_tag(game["background_image"]) %>
-    <%= game["name"] %>
-    <%= game["rating"] %>/<%= game["rating_top"] %>
-  </li>
-  <% end %>
-</ul>
-  </div>
-</div>
-
-<script>
-  //On a selecionner la classe game-card et on l'a stocké dans la variables cards
-  const cards = document.querySelectorAll('.game-card')
-  //On a récupéré un array
-   cards.forEach(card => {
-      // On a ajouté l'événement "click" sur chaque card
-     card.addEventListener("click",(event) => {
-        //On a selectionner le input vide (id => inspecteur)
-       const gameInput = document.querySelector('#user_game_game_id')
-        //On a remplacé la valeur de l'input par l'id du jeu (API)
-       gameInput.value = parseInt(card.dataset.id, 10)
-      })
-   });
-</script>
-=======
->>>>>>> 264a477df2671a02d8ded4c7b161c8e835aa5b15
