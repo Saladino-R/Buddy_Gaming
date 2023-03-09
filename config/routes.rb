@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   # root "articles#index"
   get "dashboard", to: "pages#dashboard"
   resources :user_games, only: %i[new create] do
-    get "results", to: "user_games#results"
+    get "/results", to: "user_games#results"
+    post "/friendships", to: "friendships#new"
   end
   resources :posts, only: [:create]
 end

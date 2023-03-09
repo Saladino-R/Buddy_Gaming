@@ -1,13 +1,22 @@
+<<<<<<< HEAD
 <ul class='d-flex'>
   <% @games.first(2).each do |game| %>
   <%# Array d'un hash donc [] %>
   <li class='card m-1 game-card' style='width: 18rem' data-id=<%= game["id"] %>>
+=======
+<ul class='list-games'>
+  <% @games.first(5).each do |game| %>
+  <li class='card m-1 game-card' data-id=<%= game["id"] %>>
+    <div class="card2">
+>>>>>>> 264a477df2671a02d8ded4c7b161c8e835aa5b15
     <%= image_tag(game["background_image"]) %>
     <%= game["name"] %>
     <%= game["rating"] %>/<%= game["rating_top"] %>
+    </div>
   </li>
   <% end %>
 </ul>
+<<<<<<< HEAD
 
 
 <div id="card" class="card">
@@ -39,3 +48,5 @@
       })
    });
 </script>
+=======
+>>>>>>> 264a477df2671a02d8ded4c7b161c8e835aa5b15

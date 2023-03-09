@@ -39,7 +39,6 @@ puts "Old user games destroyed !"
 
 puts 'Creating USERGAMES'
 
-
 usergame1 = UserGame.create(user_id: 1, game_id: 1, language: 'French', level: 'Casual', mode: '1on1', mood: 'Chill', console: 'PS4')
 usergame2 = UserGame.create(user_id: 2, game_id: 1, language: 'French', level: 'Casual', mode: '1on1', mood: 'Chill', console: 'PS4')
 usergame3 = UserGame.create(user_id: 3, game_id: 1, language: 'French', level: 'Casual', mode: '1on1', mood: 'Chill', console: 'PS4')
