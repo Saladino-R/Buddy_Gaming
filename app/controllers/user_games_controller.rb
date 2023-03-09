@@ -13,7 +13,7 @@ class UserGamesController < ApplicationController
     user_game = UserGame.new(game_params)
     user_game.user_id = current_user.id
     user_game.save
-    redirect_to user_game_results_path(user_game.id)
+    redirect_to user_game_results_path(current_user.id)
   end
 
   def results
@@ -28,7 +28,6 @@ class UserGamesController < ApplicationController
     @filter_matches = @matches.reject do |m|
       #in the friendships array, I select(".pluck") the matches where the user_id = the friend_id, and i put them in a new array
       current_user.friendships.pluck(:friend_id).include?(m.user_id)
-
     end
   end
 
