@@ -7,5 +7,6 @@ class PagesController < ApplicationController
   def dashboard
     @post = Post.new
     @posts = Post.all.order(created_at: :DESC)
+    @requests = Friendship.where(friend_id: current_user.id).where(confirm: nil)
   end
 end

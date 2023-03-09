@@ -5,10 +5,17 @@
   <%= f.submit %>
 <% end %>
 
-<h1>Post list</h1>
+<h3>POST LIST:</h3>
 
 <% @posts.each do |post| %>
   <p><%= post.user.nickname %> </p>
   <p><%= post.created_at %> </p>
   <p><%= post.content %> </p>
 <% end %>
+
+<h3>FRIEND REQUESTS:</h3>
+    <% @requests.each do |request| %>
+      <p><%= User.find(request.user_id).nickname%> sent you a friend request</p>
+      <%= button_to "CONFIRM", friendship_path(request.id, confirm: true), method: :patch %>
+      <%= button_to "DELETE", friendship_path(request.id, confirm: false), method: :patch %>
+    <% end %>
