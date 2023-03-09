@@ -1,5 +1,5 @@
 <ul class='d-flex'>
-  <% @games.each do |game| %>
+  <% @games.first(2).each do |game| %>
   <%# Array d'un hash donc [] %>
   <li class='card m-1 game-card' style='width: 18rem' data-id=<%= game["id"] %>>
     <%= image_tag(game["background_image"]) %>
@@ -8,6 +8,22 @@
   </li>
   <% end %>
 </ul>
+
+
+<div id="card" class="card">
+  <div class="content">
+    <ul class='d-flex'>
+  <% @games.first(2).each do |game| %>
+  <%# Array d'un hash donc [] %>
+  <li class='card m-1 game-card' style='width: 18rem' data-id=<%= game["id"] %>>
+    <%= image_tag(game["background_image"]) %>
+    <%= game["name"] %>
+    <%= game["rating"] %>/<%= game["rating_top"] %>
+  </li>
+  <% end %>
+</ul>
+  </div>
+</div>
 
 <script>
   //On a selecionner la classe game-card et on l'a stocké dans la variables cards
