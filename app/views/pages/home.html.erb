@@ -1,4 +1,36 @@
-
+<nav class="navbar navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+    <%= link_to 'Buddy gaming', root_path %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"><%= current_user.nickname %></h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item">
+            <%= link_to 'Home', root_path %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'Edit my profile', edit_user_registration_path%>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              My Dashboard
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><%= link_to 'News', dashboard_path %></li>
+              <li><%= link_to 'Friend List', dashboard_path %></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
 
 <%= link_to 'Login', new_user_session_path %>
 <%= link_to 'Find your buddy', new_user_game_path %>
