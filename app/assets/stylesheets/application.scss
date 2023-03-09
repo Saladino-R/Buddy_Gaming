@@ -10,3 +10,8 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+#main-container {
+  min-height: calc(100vh - 171px);
+  padding-top: 56px;
+}
