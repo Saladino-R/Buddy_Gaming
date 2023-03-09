@@ -17,10 +17,18 @@ class UserGamesController < ApplicationController
   end
 
   def results
+    @friendships = Friendship.all
+    @friendship = Friendship.new
     @user_games = UserGame.all
-    my_choice = UserGame.find(params[:user_game_id])
-    match = @user_games.where(game_id: my_choice.game_id).where(language: my_choice.language).where(level: my_choice.level).where(mode: my_choice.mode).where(mood: my_choice.mood).where(console: my_choice.console)
+    @my_choice = UserGame.find(params[:user_game_id])
+    match = @user_games.where(game_id: @my_choice.game_id).where(language: @my_choice.language).where(level: @my_choice.level).where(mode: @my_choice.mode).where(mood: @my_choice.mood).where(console: @my_choice.console)
     @matches = match.where.not(user_id: current_user.id)
+    # Rejecting an array of the matches profiles to whom I've already sent a friend request
+    # so I don't dispaly them again in the results.html.erb
+    @filter_matches = @matches.reject do |m|
+      #in the friendships array, I select(".pluck") the matches where the user_id = the friend_id, and i put them in a new array
+      current_user.friendships.pluck(:friend_id).include?(m.user_id)
+    end
   end
 
   private
@@ -30,7 +38,7 @@ class UserGamesController < ApplicationController
   end
 
   def game_params
-    params.require(:user_game).permit(:language, :level, :mood, :mode, :console, :user_id, :game_id)
+    params.require(:user_game).permit(:language, :level, :mood, :mode, :console, :game_id)
   end
 
   def call_api
