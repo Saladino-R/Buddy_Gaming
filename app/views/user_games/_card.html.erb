@@ -1,6 +1,6 @@
 <ul class='list-games'>
   <% @games.first(5).each do |game| %>
-  <li class='card m-1 game-card'data-id=<%= game["id"] %>>
+  <li class='card m-1 game-card' data-id=<%= game["id"] %>>
     <div class="card2">
     <%= image_tag(game["background_image"]) %>
     <%= game["name"] %>
@@ -9,18 +9,3 @@
   </li>
   <% end %>
 </ul>
-
-<script>
-  //On a selecionner la classe game-card et on l'a stocké dans la variables cards
-  const cards = document.querySelectorAll('.game-card')
-  //On a récupéré un array
-   cards.forEach(card => {
-      // On a ajouté l'événement "click" sur chaque card
-     card.addEventListener("click",(event) => {
-        //On a selectionner le input vide (id => inspecteur)
-       const gameInput = document.querySelector('#user_game_game_id')
-        //On a remplacé la valeur de l'input par le game id
-       gameInput.value = parseInt(card.dataset.id, 10)
-      })
-   });
-</script>
