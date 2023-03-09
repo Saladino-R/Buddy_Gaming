@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :friendships
   has_many :friends, through: :friendships, class_name: "User"
   has_many :user_games
+  has_one_attached :photo
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,

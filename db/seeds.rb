@@ -32,9 +32,7 @@ friendship8 = Friendship.create( user_id: 2, friend_id: 5)
 puts "Done #{Friendship.count}"
 
 puts "Delete the old UserGames"
-
 UserGame.destroy_all
-
 puts "Old user games destroyed !"
 
 puts 'Creating USERGAMES'
