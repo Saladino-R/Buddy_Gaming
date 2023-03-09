@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get "dashboard", to: "pages#dashboard"
   resources :user_games, only: %i[new create] do
     get "/results", to: "user_games#results"
-    post "/friendships", to: "friendships#new"
+    post "/friendships", to: "friendships#create"
   end
   resources :posts, only: [:create]
 end

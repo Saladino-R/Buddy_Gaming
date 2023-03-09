@@ -1,11 +1,15 @@
  <h1>Matches</h1>
-<ul>
-  <% @matches.each do |card| %>
-  <li><%= card.user.nickname %></li>
-  <li><%= card.user.birthday %></li>
-  <li><%= card.user.city %></li>
-  <li><%= card.user.bio %>Bio here:</li>
-  <li><%= card.user.availability %></li> <br>
-  <%= link_to "Like", user_game_friendships_path(card.id), data: { turbo_method: :post } %>
-  <% end %>
-</ul>
+
+  <ul>
+    <% @filter_matches.each do |user_game| %>
+    <li><%= user_game.user.created_at %></li>
+    <li><%= user_game.user.nickname %></li>
+    <li><%= user_game.user.birthday %></li>
+    <li><%= user_game.user.city %></li>
+    <li><%= user_game.user.bio %>Bio here:</li>
+    <li><%= user_game.user.availability %></li> <br>
+    <%= simple_form_for [user_game, @friendship] do |f| %>
+        <%= f.button :submit %>
+      <% end %>
+    <% end %>
+  </ul>
