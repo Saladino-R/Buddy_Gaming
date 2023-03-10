@@ -1,7 +1,7 @@
- <h1>Matches</h1>
+<h1>Matches</h1>
 
   <ul>
-    <% @filter_matches.each do |user_game| %>
+  <% @filter_matches.each do |user_game| %>
     <li><%= user_game.user.created_at %></li>
     <li><%= user_game.user.nickname %></li>
     <li><%= user_game.user.birthday %></li>
@@ -9,7 +9,7 @@
     <li><%= user_game.user.bio %>Bio here:</li>
     <li><%= user_game.user.availability %></li> <br>
     <%= simple_form_for [user_game, @friendship] do |f| %>
-        <%= f.button :submit %>
-      <% end %>
+      <%= f.button :submit %>
     <% end %>
+  <% end %>
   </ul>
