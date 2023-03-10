@@ -22,14 +22,9 @@
             <%= button_to "CONFIRM", friendship_path(request.id, confirm: true), method: :patch %>
             <%= button_to "DELETE", friendship_path(request.id, confirm: false), method: :patch %>
           <% end %>
-          
-          
-          
-          
-          <h3>FRIENDS LIST</h3>
 
-<
-          
+
+
       <h4>All my friends</h4>
       <% current_user.friends.each do |friend| %>
        <%= friend.nickname%>
@@ -76,4 +71,3 @@
       <% end %>
   </div>
 </div>
-
