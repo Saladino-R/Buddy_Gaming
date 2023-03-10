@@ -3,7 +3,6 @@
   margin-top: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
-  background-color: grey;
   width: 90%;
   color: white;
   display: flex;
@@ -12,22 +11,26 @@
 }
 
 .container-left{
-  background-color: blue;
+  border-right: 2px solid $blue;
+  border-right-style: groove;
+  padding-right: 20px;
 }
 .container-profil{
-  background-color: greenyellow;
+  // background-color: greenyellow;
 }
 
 .container-profil img{
-  width: 50px;
+  width: 100px;
+  margin-bottom: 20px;
 
 }
 
 .container-friend{
-  background-color: rgb(47, 206, 255);
+  // background-color: rgb(47, 206, 255);
 }
 
 .container-right{
+  width: 60%;
   background-color: red;
 }
 
