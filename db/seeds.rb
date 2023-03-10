@@ -9,7 +9,7 @@
 puts 'Creating user'
 
 user1 = User.create(email: "email@email.ab", password: "123456", nickname: "Leon", birthday: Time.now, city: "Nice", )
-user2 = User.create(email: "email@email.fr", password: "123456", nickname: "Luca", birthday: Time.now, city: "Milan")
+user2 = User.create(email: "ex", password: "123456", nickname: "Luca", birthday: Time.now, city: "Milan")
 user3 = User.create(email: "email@email.it", password: "123456", nickname: "Elisa", birthday: Time.now, city: "Venice")
 user4 = User.create(email: "email@email.ro", password: "123456", nickname: "Marius", birthday: Time.now, city: "Bucharest")
 user5 = User.create(email: "email@email.ie", password: "123456", nickname: "Mark", birthday: Time.now, city: "Berlin")
@@ -17,7 +17,6 @@ user6 = User.create(email: "email@email.dn", password: "123456", nickname: "Anne
 user7 = User.create(email: "email@email.gm", password: "123456", nickname: "Thor", birthday: Time.now, city: "Stockholm")
 
 puts "Done #{User.count}"
-
 
 puts 'Creating FRIENDSHIPS'
 friendship1 = Friendship.create( user_id: 1, friend_id: 2)
