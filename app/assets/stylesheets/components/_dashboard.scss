@@ -27,19 +27,28 @@
 
 .container-friend{
   // background-color: rgb(47, 206, 255);
+
+}
+
+.container-friend h2,h5{
+  color: $blue;
 }
 
 .container-right{
   width: 60%;
-  background-color: red;
+  border:2px solid $blue;
 }
 
 .container-newpost{
-  background-color: rgb(182, 47, 255);
+  // background-color: rgb(182, 47, 255);
+  width: 60%;
+ margin:auto;
 }
 
 .container-post{
-  background-color: rgb(220, 212, 0);
+  // background-color: rgb(220, 212, 0);
+  margin-top: 10px;
+  border-top: 2px solid $blue ;
 }
 .btn-post{
   font-size: 10px;

@@ -8,29 +8,24 @@
         <%= image_tag "https://res.cloudinary.com/dcd4fkkhk/image/upload/v1678372380/kisspng-emmanuel-macron-france-selfie-5b1fe5794ebb60.4981385915288170173225_qfdmzt.png"%>
       <% end %>
     <h2><%= current_user.nickname %></h2>
-    <h5>From <%= current_user.city %></h5>
-    <h5>Age:<%= current_user.birthday %></h5>
-    <p>About me<%= current_user.bio %></p>
+    <h6>From <%= current_user.city %></h6>
+    <h6>Age <%= current_user.birthday %></h6>
+    <p>About me <%= current_user.bio %></p>
     </div>
-
 
     <br>
     <div class="container-friend">
-      <h4>Friend request:</h4>
-          <% @requests.each do |request| %>
-            <p><%= User.find(request.user_id).nickname%> sent you a friend request</p>
-            <%= button_to "CONFIRM", friendship_path(request.id, confirm: true), method: :patch %>
-            <%= button_to "DELETE", friendship_path(request.id, confirm: false), method: :patch %>
-          <% end %>
-          
-          
-          
-          
-          <h3>FRIENDS LIST</h3>
+      <h5>Friend request</h5>
+    <% @requests.each do |request| %>
+        <% if User.find(request.friend_id) == current_user %>
+          <p><%= User.find(request.user_id).nickname%> sent you a friend request</p>
+          <%= button_to "CONFIRM", friendship_path(request.id, confirm: true), method: :patch %>
+          <%= button_to "DELETE", friendship_path(request.id, confirm: false), method: :patch %>
+        <% end %>
+    <% end %>
 
-<
-          
-      <h4>All my friends</h4>
+      <h5>All my friends</h5>
+        <%# 'Method friends in user model' %>
       <% current_user.friends.each do |friend| %>
        <%= friend.nickname%>
         <%# <% if friend.photo.attached? %>
@@ -42,18 +37,6 @@
     </div>
   </div>
 
-
-<h3>FRIEND REQUESTS:</h3>
-    <% @requests.each do |request| %>
-        <% if User.find(request.friend_id) == current_user %>
-          <p><%= User.find(request.user_id).nickname%> sent you a friend request</p>
-          <%= button_to "CONFIRM", friendship_path(request.id, confirm: true), method: :patch %>
-          <%= button_to "DELETE", friendship_path(request.id, confirm: false), method: :patch %>
-        <% end %>
-    <% end %>
-
-
-
   <div class="container-right">
     <div class="container-newpost">
       <h1>New post</h1>
@@ -63,17 +46,15 @@
       <% end %>
     </div>
     <div class="container-post">
-    <h3>POST LIST:</h3>
+    <h5>Friends News:</h5>
 
       <% @posts.each do |post| %>
-        <p><%= post.user.nickname %> </p>
-        <p><%= post.created_at %> </p>
+        <p><b>by</b> <%= post.user.nickname %> </p>
+        <p><b>posted at</b> <%= post.created_at %> </p>
         <p><%= post.content %> </p>
-
         <%= button_to "Delete post",
                 post_path(post.id), method: :delete, class: 'btn btn-post' %>
 
       <% end %>
   </div>
 </div>
-
