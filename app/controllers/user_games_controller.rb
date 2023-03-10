@@ -12,8 +12,11 @@ class UserGamesController < ApplicationController
   def create
     user_game = UserGame.new(game_params)
     user_game.user_id = current_user.id
-    user_game.save
-    redirect_to user_game_results_path(current_user.id)
+    if user_game.save
+      redirect_to user_game_results_path(user_game.id)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def results
