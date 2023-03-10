@@ -2,7 +2,7 @@
   <% @games.first(5).each do |game| %>
   <li class='card1 m-1 game-card' data-id=<%= game["id"] %>>
     <div class="card2">
-    <%= image_tag(game["background_image"]), id:"img-games" %>
+    <%= image_tag(game["background_image"])%>
     <%= game["name"] %>
     <%#= game["rating"] %><%#= game["rating_top"] %>
     </div>
