@@ -1,0 +1,44 @@
+.container-dashboard{
+  margin: auto;
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: grey;
+  width: 90%;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.container-left{
+  background-color: blue;
+}
+.container-profil{
+  background-color: greenyellow;
+}
+
+.container-profil img{
+  width: 50px;
+
+}
+
+.container-friend{
+  background-color: rgb(47, 206, 255);
+}
+
+.container-right{
+  background-color: red;
+}
+
+.container-newpost{
+  background-color: rgb(182, 47, 255);
+}
+
+.container-post{
+  background-color: rgb(220, 212, 0);
+}
+.btn-post{
+  font-size: 10px;
+  padding: 5px;
+}

@@ -10,8 +10,8 @@ Rails.application.routes.draw do
     get "/results", to: "user_games#results"
     post "/friendships", to: "friendships#create"
   end
-  resources :posts, only: [:create]
+  resources :posts, only: [:create, :destroy]
   resources :friendships, only: [:update]
-  #   post "/dashboard/:user_id", to: "pages#dashboard"
 
+  #   post "/dashboard/:user_id", to: "pages#dashboard"
 end

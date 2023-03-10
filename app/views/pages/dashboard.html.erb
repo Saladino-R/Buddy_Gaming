@@ -1,20 +1,55 @@
-<h1>New post</h1>
+<div class="container-dashboard">
+  <div class="container-left">
+    <div class="container-profil">
+      <% if current_user.photo.attached? %>
+        <%= cl_image_tag current_user.photo.key %>
+      <%else %>
+        <%= image_tag "https://res.cloudinary.com/dcd4fkkhk/image/upload/v1678372380/kisspng-emmanuel-macron-france-selfie-5b1fe5794ebb60.4981385915288170173225_qfdmzt.png"%>
+      <% end %>
+    <h2>Name : <%= current_user.nickname %></h2>
+    <h4>City : <%= current_user.city %></h4>
+    <h4>Birthday : <%= current_user.birthday %></h4>
+    <p>Bio : <%= current_user.birthday %></p>
+    </div>
 
-<%= simple_form_for(@post) do |f| %>
-  <%= f.input :content %>
-  <%= f.submit %>
-<% end %>
+    <div class="container-friend">
+      <h4>Friend request:</h4>
+          <% @requests.each do |request| %>
+            <p><%= User.find(request.user_id).nickname%> sent you a friend request</p>
+            <%= button_to "CONFIRM", friendship_path(request.id, confirm: true), method: :patch %>
+            <%= button_to "DELETE", friendship_path(request.id, confirm: false), method: :patch %>
+          <% end %>
+      <h4>All my friends</h4>
+      <% @friends_list.each do |friendship| %>
+        <%= User.find(friendship.friend_id).nickname%>
+        <% if User.find(friendship.friend_id).photo.attached? %>
+          <%= cl_image_tag User.find(friendship.friend_id).photo.key %>
+        <%else %>
+          <%= image_tag "https://res.cloudinary.com/dcd4fkkhk/image/upload/v1678372380/kisspng-emmanuel-macron-france-selfie-5b1fe5794ebb60.4981385915288170173225_qfdmzt.png"%>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 
-<h3>POST LIST:</h3>
-<% @posts.each do |post| %>
-  <p><%= post.user.nickname %> </p>
-  <p><%= post.created_at %> </p>
-  <p><%= post.content %> </p>
-<% end %>
+  <div class="container-right">
+    <div class="container-newpost">
+      <h1>New post</h1>
+      <%= simple_form_for(@post) do |f| %>
+        <%= f.input :content %>
+        <%= f.button :submit %>
+      <% end %>
+    </div>
+    <div class="container-post">
+    <h3>POST LIST:</h3>
 
-<h3>FRIEND REQUESTS:</h3>
-    <% @requests.each do |request| %>
-      <p><%= User.find(request.user_id).nickname%> sent you a friend request</p>
-      <%= button_to "CONFIRM", friendship_path(request.id, confirm: true), method: :patch %>
-      <%= button_to "DELETE", friendship_path(request.id, confirm: false), method: :patch %>
-    <% end %>
+      <% @posts.each do |post| %>
+        <p><%= post.user.nickname %> </p>
+        <p><%= post.created_at %> </p>
+        <p><%= post.content %> </p>
+
+        <%= button_to "Delete post",
+                post_path(post.id), method: :delete, class: 'btn btn-post' %>
+
+      <% end %>
+  </div>
+</div>
