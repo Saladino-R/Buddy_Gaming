@@ -14,12 +14,14 @@
 
 <h3>FRIEND REQUESTS:</h3>
     <% @requests.each do |request| %>
-      <p><%= User.find(request.user_id).nickname%> sent you a friend request</p>
-      <%= button_to "CONFIRM", friendship_path(request.id, confirm: true), method: :patch %>
-      <%= button_to "DELETE", friendship_path(request.id, confirm: false), method: :patch %>
+        <% if User.find(request.friend_id) == current_user %>
+          <p><%= User.find(request.user_id).nickname%> sent you a friend request</p>
+          <%= button_to "CONFIRM", friendship_path(request.id, confirm: true), method: :patch %>
+          <%= button_to "DELETE", friendship_path(request.id, confirm: false), method: :patch %>
+        <% end %>
     <% end %>
 
 <h3>FRIENDS LIST</h3>
-<% @friends_list.each do |friendship| %>
-<%= User.find(friendship.friend_id).nickname%>
+<% current_user.friends.each do |friend| %>
+    <%= friend.nickname%>
 <% end %>
