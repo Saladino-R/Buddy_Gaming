@@ -9,8 +9,10 @@ export const selectGame = () => {
          //On a selectionner le input vide (id => inspecteur)
         const gameInput = document.querySelector('#user_game_game_id')
          //On a remplacé la valeur de l'input par le game id
+        card.classList.add("active")
+        card.classList.remove("active")
         gameInput.value = parseInt(card.dataset.id, 10)
-       })
+      })
     });
   }
 }
