@@ -6,7 +6,6 @@
 <% end %>
 
 <h3>POST LIST:</h3>
-
 <% @posts.each do |post| %>
   <p><%= post.user.nickname %> </p>
   <p><%= post.created_at %> </p>
@@ -19,3 +18,8 @@
       <%= button_to "CONFIRM", friendship_path(request.id, confirm: true), method: :patch %>
       <%= button_to "DELETE", friendship_path(request.id, confirm: false), method: :patch %>
     <% end %>
+
+<h3>FRIENDS LIST</h3>
+<% @friends_list.each do |friendship| %>
+<%= User.find(friendship.friend_id).nickname%>
+<% end %>

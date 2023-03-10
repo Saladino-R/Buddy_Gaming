@@ -11,14 +11,18 @@ class FriendshipsController < ApplicationController
   end
 
   def update
+    @friend_list = []
     @friendship_request = Friendship.find(params[:id])
     if params[:confirm] == "true"
-      @friendship_request.confirm = true
+      @new_friend = @friendship_request.confirm = true
+      @friend_list.push(@new_friend)
+
     else
       @friendship_request.confirm = false
     end
     # ^ If we press the button "DELETE", we only change the value of confirm: to "false", but we still save the friendship request in our DB
     @friendship_request.save
-    redirect_to dashboard_path
+    redirect_to dashboard_path, notice: "You are now friends"
+
   end
 end
