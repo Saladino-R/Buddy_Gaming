@@ -8,9 +8,14 @@ export const selectGame = () => {
       card.addEventListener("click", () => {
          //On a selectionner le input vide (id => inspecteur)
         const gameInput = document.querySelector('#user_game_game_id')
+        const activeCard = document.querySelector('.active-card')
          //On a remplacé la valeur de l'input par le game id
+        card.classList.add("active-card")
         gameInput.value = parseInt(card.dataset.id, 10)
-       })
+        if (activeCard) {
+          activeCard.classList.remove("active-card")
+        };
+      })
     });
   }
 }
