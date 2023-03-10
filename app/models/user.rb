@@ -2,7 +2,6 @@ class User < ApplicationRecord
   has_many :posts
   has_many :messages
   has_many :friendships
-  has_many :friends, through: :friendships, class_name: "User"
   has_many :user_games
   has_one_attached :photo
   # Include default devise modules. Others available are:
@@ -14,4 +13,17 @@ class User < ApplicationRecord
   validates :bio, length: { maximum: 500 }
   validates :birthday, presence: true
   validates :city, presence: true
+
+  def friends
+    friends = []
+    @received_friends_r = Friendship.where(friend_id: self.id).where(confirm: true)
+    @sent_friends_r = Friendship.where(user_id: self.id).where(confirm: true)
+    @received_friends_r.each do |friend|
+      friends << User.find(friend.user_id)
+    end
+    @sent_friends_r.each do |friend|
+      friends << User.find(friend.friend_id)
+    end
+    return friends
+  end
 end
