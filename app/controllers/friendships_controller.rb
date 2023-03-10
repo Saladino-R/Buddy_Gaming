@@ -11,11 +11,10 @@ class FriendshipsController < ApplicationController
   end
 
   def update
-    @friend_list = []
     @friendship_request = Friendship.find(params[:id])
     if params[:confirm] == "true"
-      @new_friend = @friendship_request.confirm = true
-      @friend_list.push(@new_friend)
+      @friendship_request.confirm = true
+
 
     else
       @friendship_request.confirm = false

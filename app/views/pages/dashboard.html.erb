@@ -18,8 +18,3 @@
       <%= button_to "CONFIRM", friendship_path(request.id, confirm: true), method: :patch %>
       <%= button_to "DELETE", friendship_path(request.id, confirm: false), method: :patch %>
     <% end %>
-
-<h3>FRIENDS LIST</h3>
-<% @friends_list.each do |friendship| %>
-<%= User.find(friendship.friend_id).nickname%>
-<% end %>
