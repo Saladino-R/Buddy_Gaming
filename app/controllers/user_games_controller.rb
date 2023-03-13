@@ -2,7 +2,7 @@ require "json"
 require "open-uri"
 
 class UserGamesController < ApplicationController
-  before_action :set_user, only: %i[new create]
+  before_action :set_user, only: %i[new create destroy]
 
   def new
     @user_game = UserGame.new
