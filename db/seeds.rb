@@ -73,4 +73,3 @@ UserGame.create(user_id: user6.id, game_id: 3498, language: 'French', level: 'Ca
 UserGame.create(user_id: user7.id, game_id: 3498, language: 'French', level: 'Casual', mode: '1on1', mood: "Chill", console: 'PS4')
 
 puts "Done #{UserGame.count}"
-
