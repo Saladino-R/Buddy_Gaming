@@ -1,0 +1,6 @@
+<%# To be able to use a "link_to" in user_games controller %>
+<% flash.each do |type, msg| %>
+    <div class="alert alert-info">
+        <%= msg.html_safe %>
+    </div>
+<% end %>
