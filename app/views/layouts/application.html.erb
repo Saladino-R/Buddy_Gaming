@@ -19,10 +19,13 @@
   <body>
     <%= render "layouts/navbar" %>
     <div id="main-container">
-    <%= yield %>
+      <%= yield %>
+      <%= render "devise/shared/flash" %>
     </div>
-    <p class="alert"><%= alert %></p>
-    <p class="notice"><%= notice %></p>
+    <%# <p class="alert"><%= alert</p> %>
+    <%# <p class="notice"><%= notice %></p>
+   <%# To be able to use a "link_to" in user_games controller %>
+    <%# <%= yield %>
     <%= render "layouts/footer" %>
     <%# installe swiper %>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
