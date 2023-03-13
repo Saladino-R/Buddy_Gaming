@@ -9,6 +9,8 @@ gem "devise"
 #Cloudinary
 gem "cloudinary"
 
+#Swiper-rails --> For carousel
+gem 'swiper-rails'
 
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"

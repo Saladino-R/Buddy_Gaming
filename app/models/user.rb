@@ -1,3 +1,4 @@
+require 'date'
 class User < ApplicationRecord
   has_many :posts
   has_many :messages
@@ -25,5 +26,10 @@ class User < ApplicationRecord
       friends << User.find(friend.friend_id)
     end
     return friends
+  end
+
+  def user_age
+    age = Date.today.year - self.birthday.year
+    return age
   end
 end

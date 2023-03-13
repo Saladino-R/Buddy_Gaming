@@ -2,7 +2,7 @@ require "json"
 require "open-uri"
 
 class UserGamesController < ApplicationController
-  before_action :set_user, only: %i[new create]
+  before_action :set_user, only: %i[new create destroy]
 
   def new
     @user_game = UserGame.new
@@ -15,7 +15,8 @@ class UserGamesController < ApplicationController
     if user_game.save
       redirect_to user_game_results_path(user_game.id)
     else
-      render :new, status: :unprocessable_entity
+      flash[:notice] = "You already have this game choice in your #{view_context.link_to 'game history', new_user_game_path}".html_safe
+
     end
   end
 

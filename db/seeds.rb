@@ -5,7 +5,9 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-
+puts 'Destroy user'
+User.destroy_all
+puts "Old users destroyed !"
 puts 'Creating user'
 # userE = User.create(email: "email@email.ee", password: "123456", nickname: "Elena", birthday: Time.now, city: "Nice")
 # userR = User.create(email: "email@email.rr", password: "123456", nickname: "Ryan", birthday: Time.now, city: "Cannes")
@@ -40,6 +42,7 @@ user22 = User.create(email: "email@email.ch", password: "123456", nickname: "Fed
 
 
 
+
 puts "Done #{User.count}"
 
 # puts 'Creating FRIENDSHIPS'
@@ -54,28 +57,19 @@ puts "Done #{User.count}"
 
 # puts "Done #{Friendship.count}"
 
-# puts "Delete the old UserGames"
-# UserGame.destroy_all
-# puts "Old user games destroyed !"
 
-# puts 'Creating USERGAMES'
+puts "Delete the old UserGames"
+UserGame.destroy_all
+puts "Old user games destroyed !"
 
-# usergame1 = UserGame.create(user_id: 1, game_id: 1, language: 'French', level: 'Casual', mode: '1on1', mood: 'Chill', console: 'PS4')
-# usergame2 = UserGame.create(user_id: 2, game_id: 1, language: 'French', level: 'Casual', mode: '1on1', mood: 'Chill', console: 'PS4')
-# usergame3 = UserGame.create(user_id: 3, game_id: 1, language: 'French', level: 'Casual', mode: '1on1', mood: 'Chill', console: 'PS4')
-# usergame4 = UserGame.create(user_id: 4, game_id: 1, language: 'French', level: 'Casual', mode: '1on1', mood: 'Chill', console: 'PS4')
-# usergame5 = UserGame.create(user_id: 5, game_id: 2, language: 'English', level: 'Tryharder', mode: '1on1', mood: "Tryhard", console: 'PS4')
-# usergame6 = UserGame.create(user_id: 6, game_id: 2, language: 'English', level: 'Tryharder', mode: '1on1', mood: "Tryhard", console: 'PS4')
-# usergame7 = UserGame.create(user_id: 7, game_id: 2, language: 'English', level: 'Tryharder', mode: '1on1', mood: "Tryhard", console: 'PS4')
+puts 'Creating USERGAMES'
 
-# puts "Done #{UserGame.count}"
+UserGame.create(user_id: user1.id, game_id: 3498, language: 'French', level: 'Casual', mode: '1on1', mood: 'Chill', console: 'PS4')
+UserGame.create(user_id: user2.id, game_id: 3498, language: 'French', level: 'Casual', mode: '1on1', mood: 'Chill', console: 'PS4')
+UserGame.create(user_id: user3.id, game_id: 3498, language: 'French', level: 'Casual', mode: '1on1', mood: 'Chill', console: 'PS4')
+UserGame.create(user_id: user4.id, game_id: 3498, language: 'French', level: 'Casual', mode: '1on1', mood: 'Chill', console: 'PS4')
+UserGame.create(user_id: user5.id, game_id: 3498, language: 'French', level: 'Casual', mode: '1on1', mood: "Chill", console: 'PS4')
+UserGame.create(user_id: user6.id, game_id: 3498, language: 'French', level: 'Casual', mode: '1on1', mood: "Chill", console: 'PS4')
+UserGame.create(user_id: user7.id, game_id: 3498, language: 'French', level: 'Casual', mode: '1on1', mood: "Chill", console: 'PS4')
 
-puts "Creating chatrooms"
-
-msg1 = Message.create(user_id: 3, content: "Coucou toi", chatroom_id: 1)
-
-puts "Done #{Message.count}"
-
-puts "Creating Chatroom"
-
-ch1 = Chatroom.create(message: 1, name: current_user.nickname)
+puts "Done #{UserGame.count}"
