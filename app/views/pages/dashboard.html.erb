@@ -27,7 +27,7 @@
       <h5>All my friends</h5>
         <%# 'Method friends in user model' %>
       <% current_user.friends.each do |friend| %>
-       <%= friend.nickname%>
+      <%= friend.nickname%>
         <%# <% if friend.photo.attached? %>
           <%# <%= cl_image_tag friend.photo.key %>
         <%# <%else %>
@@ -56,6 +56,24 @@
                 post_path(post.id), method: :delete, class: 'btn btn-post' %>
 
       <% end %>
+  </div>
+
+  <div class="container-history">
+    <h5>My history</h5>
+    <ul>
+      <%= @histories.each_with_index do |history, index| %>
+      <li>
+      <% @game_detail = @game_details[index] %>
+      <%# <%= image_tag(@game_detail["background_image"]) %>
+      <%= @game_detail["name"] %>
+      <%= history.language %>
+      <%= history.level %>
+      <%= history.mood %>
+      <%= history.mode %>
+      <%= history.console %>
+      </li>
+      <% end %>
+    </ul>
   </div>
 </div>
 </div>
