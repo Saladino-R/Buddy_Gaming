@@ -7,6 +7,12 @@ class PagesController < ApplicationController
   def home
   end
 
+  def friend_show
+    @friend = User.find(params[:id])
+    @histories = @friend.user_games
+  end
+
+
   def dashboard
     @post = Post.new
     @posts = Post.all.order(created_at: :DESC)

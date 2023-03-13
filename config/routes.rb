@@ -6,12 +6,12 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   get "dashboard", to: "pages#dashboard"
-  resources :user_games, only: %i[new create ] do
+  get "/friend/:id", to: "pages#friend_show", as:"friend"
+  resources :user_games, only: %i[new create] do
     get "/results", to: "user_games#results"
     post "/friendships", to: "friendships#create"
-
   end
-  resources :posts, only: [:create, :destroy]
+  resources :posts, only: %i[create destroy]
   resources :friendships, only: [:update]
 
   #   post "/dashboard/:user_id", to: "pages#dashboard"

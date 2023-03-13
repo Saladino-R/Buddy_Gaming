@@ -1,7 +1,7 @@
 <div class="container-dashboard">
   <div class="container-left">
     <div class="container-profil">
-      <h1>My profil</h1>
+      <h1>My profile</h1>
         <% if current_user.photo.attached? %>
           <%= cl_image_tag current_user.photo.key %>
         <%else %>
@@ -28,7 +28,9 @@
         <%# 'Method friends in user model' %>
       <% current_user.friends.each do |friend| %>
 
-      <%= friend.nickname%>
+
+      <%= link_to friend.nickname, friend_path(friend.id) %>
+
         <%# <% if friend.photo.attached? %>
           <%# <%= cl_image_tag friend.photo.key %>
         <%# <%else %>
