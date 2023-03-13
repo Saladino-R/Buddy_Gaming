@@ -13,5 +13,9 @@ Rails.application.routes.draw do
   resources :posts, only: [:create, :destroy]
   resources :friendships, only: [:update]
 
+  resources :chatrooms, only: %i[show index] do
+    resources :messages, only: :create
+  end
+
   #   post "/dashboard/:user_id", to: "pages#dashboard"
 end

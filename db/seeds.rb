@@ -69,3 +69,13 @@ puts "Done #{User.count}"
 # usergame7 = UserGame.create(user_id: 7, game_id: 2, language: 'English', level: 'Tryharder', mode: '1on1', mood: "Tryhard", console: 'PS4')
 
 # puts "Done #{UserGame.count}"
+
+puts "Creating chatrooms"
+
+msg1 = Message.create(user_id: 3, content: "Coucou toi", chatroom_id: 1)
+
+puts "Done #{Message.count}"
+
+puts "Creating Chatroom"
+
+ch1 = Chatroom.create(message: 1, name: current_user.nickname)
