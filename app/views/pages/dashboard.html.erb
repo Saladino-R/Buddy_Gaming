@@ -27,8 +27,6 @@
       <h5>All my friends</h5>
         <%# 'Method friends in user model' %>
       <% current_user.friends.each do |friend| %>
-
-
       <%= link_to friend.nickname, friend_path(friend.id) %>
 
         <%# <% if friend.photo.attached? %>
@@ -56,8 +54,10 @@
         <p><b>by</b> <%= post.user.nickname %> </p>
         <p><b>posted at</b> <%= post.created_at %> </p>
         <p><%= post.content %> </p>
-        <%= button_to "Delete post",
+        <% if post.user_id == current_user.id %>
+          <%= button_to "Delete post",
                 post_path(post.id), method: :delete, class: 'btn btn-post' %>
+        <% end %>
       <% end %>
   </div>
 
