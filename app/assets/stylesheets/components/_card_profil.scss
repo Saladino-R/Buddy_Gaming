@@ -1,24 +1,29 @@
-.img-profil {
-  width: 100px;
-  height: 100px;
-  img {
-    height: auto;
-    width: 100%;
-  }
-}
+.main-container{
 
-.card-profil {
-  width: 220px;
-  border-radius: 22px;
-  background: #212121;
-  box-shadow: 15px 15px 30px rgb(25, 25, 25),
-  -15px -15px 30px rgb(60, 60, 60);
 }
-
-.container-card {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+.container-results{
   margin: auto;
-  height: 525px;
+  width: 50%;
+  text-align: center;
+  justify-content: center;
+}
+.card-choice img{
+  width: 100%;
+}
+
+.mt-4{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.card-choice {
+  background: #0000006f;
+  border-radius: 10px;
+  border: 1px solid $blue;
+  box-shadow: rgba(0, 77, 154, 0.54) 0px 8px 24px;
+  margin-bottom: 2rem;
+  padding-bottom: 10px;
+  text-align: center;
 }
