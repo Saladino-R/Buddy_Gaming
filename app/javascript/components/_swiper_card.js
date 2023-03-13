@@ -5,10 +5,13 @@
 export const swiperCard = () => {
   const swiperContainer = document.querySelector('.swiper')
   if (swiperContainer){
-    console.log('coucou swiper');
-    const swiper = new Swiper('.swiper', {
+    const swiper = new Swiper(".mySwiper", {
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      effect: "cards",
+      grabCursor: true,
     });
-
   }
-
 }
