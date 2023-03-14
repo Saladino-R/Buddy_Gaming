@@ -23,7 +23,7 @@ export const searchBar = () => {
 
     searchInput.addEventListener("keyup", (event) =>{
       if (searchInput.value.length > 2) {
-        fetch(`https://api.rawg.io/api/games?key=247e70c9e71849f08c28fb60b1976fb3&search=${searchInput.value.replace(' ','-')}&page_size=5&ordering=-metacritic`)
+        fetch(`https://api.rawg.io/api/games?search=${searchInput.value.replace(' ','-')}&key=247e70c9e71849f08c28fb60b1976fb3&page_size=5`)
           .then(response => response.json())
           .then(data => displayData(data.results));
       }
