@@ -3,6 +3,7 @@ export const selectGame = () => {
   const cards = document.querySelectorAll('.game-card')
   //On a récupéré un array
   if (cards) {
+    console.log('coucou');
     cards.forEach(card => {
        // On a ajouté l'événement "click" sur chaque card
       card.addEventListener("click", () => {
