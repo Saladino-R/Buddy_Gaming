@@ -10,6 +10,9 @@ export const swiperCard = () => {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
+      keyboard: {
+        enabled: true,
+      },
       effect: "cards",
       grabCursor: true,
     });
