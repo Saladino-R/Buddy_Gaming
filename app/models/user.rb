@@ -2,6 +2,7 @@ require 'date'
 class User < ApplicationRecord
   has_many :posts
   has_many :messages
+  has_many :chatrooms, through: :messages
   has_many :friendships
   has_many :user_games
   has_one_attached :photo
