@@ -3,9 +3,21 @@
   padding: 8px;
 }
 
+.new_message{
+  display:flex;
+}
+.form-control{
+  margin-right: 5px;
+}
+
 .container-chat{
   width: 70%;
   margin:auto;
+  border-radius: 10px;
+  border: solid;
+  border-color: #03ff744f;
+  background-color: #0000001f;
+  padding: 20px;
 }
 
 // To style the message itself

@@ -4,8 +4,8 @@
   <%= f.input :language, collection: ["French", "Italian", "English", "German", "Japanese", "Chinese"] %>
   <%= f.input :level,  collection: ["Casual", "Medium level", "Tryharder", "Hardcore Gameur"] %>
   <%= f.collection_radio_buttons :mood, [[true, 'Yes'], [false, 'No']], :first, :last %>
-  <%#= f.input :mood, collection: ["Chill", "Tryhard"]%>
+  <%= f.input :mood, collection: ["Chill", "Tryhard"]%>
   <%= f.input :type, collection: ["1on1", "Team"] %>
-  <%= f.input :console, collection: ["PC", "PS4", "PS5", "Xbox One", "Xbox 360"] %>
+  <%= f.input :console, collection: ["PC", "PS4", "PS5", "Xbox One", "Xbox 360", 'Nintendo Switch'] %>
   <%= f.button :submit %>
 <% end %>
