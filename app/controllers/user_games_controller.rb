@@ -52,6 +52,6 @@ class UserGamesController < ApplicationController
     url = "https://api.rawg.io/api/games?key=#{key}"
     games_serialized = URI.open(url).read
     # Parsing json de l'api
-    games = JSON.parse(games_serialized)
+    JSON.parse(games_serialized)
   end
 end

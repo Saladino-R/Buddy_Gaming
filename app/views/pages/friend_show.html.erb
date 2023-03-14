@@ -1,16 +1,20 @@
+<%# FRIEND PROFILE INFO %>
+
 <%= @friend.nickname%><br>
 <% if @friend.photo.attached? %>
-          <%= cl_image_tag @friend.photo.key %>
-        <%else %>
-          <%= image_tag "https://res.cloudinary.com/dcd4fkkhk/image/upload/v1678372380/kisspng-emmanuel-macron-france-selfie-5b1fe5794ebb60.4981385915288170173225_qfdmzt.png"%>
-        <% end %>
+      <%= cl_image_tag @friend.photo.key %>
+  <%else %>
+      <%= image_tag "https://res.cloudinary.com/dcd4fkkhk/image/upload/v1678372380/kisspng-emmanuel-macron-france-selfie-5b1fe5794ebb60.4981385915288170173225_qfdmzt.png"%>
+<% end %>
 
 <%= @friend.user_age%><br>
 <%= @friend.city%><br>
 <%= @friend.bio%><br>
 
+<%# BUTTON CHAT %>
+<%= link_to "Chat with '#{@friend.nickname}", chatroom_path(@chatroom.id) %>
 
-
+<%# POST %>
 <% @friend.posts.each do |post| %>
     <p><b>by</b> <%= post.user.nickname %> </p>
     <p><b>posted at</b> <%= post.created_at %> </p>
