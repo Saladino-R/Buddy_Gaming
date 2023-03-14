@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 puts 'Destroy user'
-User.destroy_all
+# User.destroy_all
 puts "Old users destroyed !"
 puts 'Creating user'
 # userE = User.create(email: "email@email.ee", password: "123456", nickname: "Elena", birthday: Time.now, city: "Nice")
@@ -39,8 +39,6 @@ user19 = User.create(email: "email@email.cd", password: "123456", nickname: "Nat
 user20 = User.create(email: "email@email.ce", password: "123456", nickname: "Gabi", birthday: Time.now, city: "Galway")
 user21 = User.create(email: "email@email.cf", password: "123456", nickname: "Ellie", birthday: Time.now, city: "Grasse")
 user22 = User.create(email: "email@email.ch", password: "123456", nickname: "Fede", birthday: Time.now, city: "Casablanca")
-
-
 
 
 puts "Done #{User.count}"
