@@ -64,7 +64,7 @@
   <div class="container-history">
     <h5>My history</h5>
     <ul>
-      <%= @histories.each_with_index do |history, index| %>
+      <% @histories.each_with_index do |history, index| %>
       <li>
       <% @game_detail = @game_details[index] %>
       <%# <%= image_tag(@game_detail["background_image"]) %>
