@@ -19,7 +19,7 @@
       <% if current_user.photo.attached? %>
         <%= cl_image_tag current_user.photo.key %>
       <%else %>
-        <%= image_tag "https://res.cloudinary.com/dcd4fkkhk/image/upload/v1678717126/No-Image_uhbhk5.png"%>
+        <%=image_tag "https://res.cloudinary.com/dcd4fkkhk/image/upload/v1678717126/No-Image_uhbhk5.png"%>
       <% end %>
       </div>
       <div class="offcanvas-body">
