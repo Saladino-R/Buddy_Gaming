@@ -5,6 +5,7 @@
 <%= simple_form_for @user_game do |f| %>
   <%= render "user_games/card", games: @games %>
   <div class="margin-form">
+    <input type="text" placeholder="Search game" id="input_search">
     <%= f.input :language, collection: ["French", "Italian", "English", "German", "Japanese", "Chinese"] %>
     <%= f.input :level,  collection: ["Casual", "Medium level", "Tryharder", "Hardcore Gameur"] %>
     <%= f.input :mood, collection: ["Chill", "Tryhard"]%>
