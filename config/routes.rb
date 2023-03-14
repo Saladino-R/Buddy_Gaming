@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   resources :posts, only: %i[create destroy]
   resources :friendships, only: [:update]
 
-  resources :chatrooms, only: %i[show index] do
+  resources :chatrooms, only: %i[show index new] do
     resources :messages, only: :create
   end
 

@@ -14,6 +14,7 @@ class FriendshipsController < ApplicationController
     @friendship_request = Friendship.find(params[:id])
     if params[:confirm] == "true"
       @friendship_request.confirm = true
+      Chatroom.create(friend_id: current_user.id, user_id: @friendship_request.user_id, name: "#{current_user.nickname} & #{@friendship_request.user.nickname}")
     else
       @friendship_request.confirm = false
     end
