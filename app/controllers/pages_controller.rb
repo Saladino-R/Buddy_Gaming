@@ -10,8 +10,13 @@ class PagesController < ApplicationController
   def friend_show
     @friend = User.find(params[:id])
     @histories = @friend.user_games
-  end
 
+    chatrooms = Chatroom.where(user_id: current_user.id).where(friend_id: @friend.id)
+    if chatrooms.empty?
+      chatrooms = Chatroom.where(friend_id: current_user.id).where(user_id: @friend.id)
+    end
+    @chatroom = chatrooms.first
+  end
 
   def dashboard
     @post = Post.new
