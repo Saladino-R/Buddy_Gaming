@@ -1,8 +1,8 @@
 <%# -------------- Navbar -------------------- %>
 <div class="container-homepage">
   <div class="left-logo"><%= image_tag "https://res.cloudinary.com/dcd4fkkhk/image/upload/v1678865311/Logo_left_gtmtr8.png"%></div>
-  <%= link_to new_user_game_path do %>
-    <button data-text="Awesome" class="button">
+  <%= link_to new_user_game_path, id: "home_effect" do %>
+    <button data-text="Awesome" class="button" >
           <span class="actual-text">&nbsp;GOBUDDY&nbsp;</span>
           <span class="hover-text" aria-hidden="true">&nbsp;GOBUDDY&nbsp;</span>
     </button>
