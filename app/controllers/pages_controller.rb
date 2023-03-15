@@ -9,6 +9,7 @@ class PagesController < ApplicationController
 
   def friend_show
     @friend = User.find(params[:id])
+    # @friendship_id = @friend.friendships.where(user_id: @friend.id).where(friend_id: current_user.id)
     @histories = @friend.user_games
     @message = Message.new
 
@@ -21,7 +22,9 @@ class PagesController < ApplicationController
 
   def dashboard
     @post = Post.new
-    @posts = Post.all.order(created_at: :DESC)
+    friends_posts = Post.all.where(user_id: current_user.friends)
+    my_posts = Post.all.where(user_id: current_user.id)
+    @all_posts = (friends_posts + my_posts)
     @requests = Friendship.where(friend_id: current_user.id).where(confirm: nil)
     # @received_friends_r = Friendship.where(friend_id: current_user.id).where(confirm: true)
     # @sent_friends_r = Friendship.where(user_id: current_user.id).where(confirm: true)
