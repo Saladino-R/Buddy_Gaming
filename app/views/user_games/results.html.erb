@@ -6,6 +6,7 @@
     <div class="swiper-wrapper">
       <!-- Slides -->
        <% @filter_matches.each do |user_game| %>
+
       <%= render "user_games/cardswipe", user_game: user_game %>
       <% end %>
     </div>

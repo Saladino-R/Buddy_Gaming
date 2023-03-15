@@ -11,6 +11,7 @@ class PagesController < ApplicationController
     @friend = User.find(params[:id])
     # @friendship_id = @friend.friendships.where(user_id: @friend.id).where(friend_id: current_user.id)
     @histories = @friend.user_games
+    @message = Message.new
 
     chatrooms = Chatroom.where(user_id: current_user.id).where(friend_id: @friend.id)
     if chatrooms.empty?

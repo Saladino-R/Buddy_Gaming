@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: redis
-  url: <%= ENV.fetch("redis://default:kmkL7Fk1qojhLckk4VBvyoDtUP4YuD8k@redis-17735.c77.eu-west-1-1.ec2.cloud.redislabs.com:17735") { "redis://localhost:6379/1" } %>
+  url: <%= ENV.fetch("REDISCLOUD_URL") { "redis://localhost:6379/1" } %>
   channel_prefix: Buddy_Gaming_production
