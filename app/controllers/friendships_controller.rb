@@ -20,6 +20,15 @@ class FriendshipsController < ApplicationController
     end
     # ^ If we press the button "DELETE", we only change the value of confirm: to "false", but we still save the friendship request in our DB
     @friendship_request.save
-    redirect_to dashboard_path, notice: "You are now friends"
+
+    redirect_to dashboard_path, notice: "#{@friendship_request.user.nickname} and you are now friends"
   end
+
+  # def destroy
+  #   @friendship_id = @friend.friendships.where(user_id: @friend.id).where(friend_id: current_user.id)
+  #   if params[:confirm] == "false"
+  #     @friendship_request.confirm = false
+  #     @friendship_request.destroy
+  #   end
+  # end
 end

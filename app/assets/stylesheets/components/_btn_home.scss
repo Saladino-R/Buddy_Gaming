@@ -6,17 +6,14 @@
   align-items: center;
 }
 /* === removing default button style ===*/
+
+/* button styling */
 .button {
   margin: 0;
   height: auto;
   background: transparent;
   padding: 0;
   border: none;
-}
-
-/* button styling */
-.button {
-  // --border-right: 6px;
   --text-stroke-color: rgba(255,255,255,0.6);
   --animation-color:rgb(3, 255, 116);
   --fs-size: 4em;
@@ -54,9 +51,17 @@
     height: 100%;
   }
 }
+.move-left{
+  transform: translateX(210px) !important;
+  transition-duration: 0.6s !important;
+}
 .right-logo{
   height: 80%;
   img{
     height: 100%;
   }
+}
+.move-right{
+  transform: translateX(-210px) !important;
+  transition-duration: 0.6s !important;
 }

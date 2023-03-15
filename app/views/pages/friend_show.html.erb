@@ -14,23 +14,49 @@
     <div class="container-detail">
       <h3 class='name-show'><%= @friend.nickname%></h3>
       <br>
-      <p class="detail-card"><%= @friend.user_age%></p>
-      <br>
-      <p class="detail-card"><%= @friend.city%><br></p>
-      <p class="detail-card"><%= @friend.bio%><br></p>
+
+      <p class="detail-card"><b>Age</b> <%= @friend.user_age%></p>
+      <p class="detail-card"><b>From</b> <%= @friend.city%></p>
+      <p class="detail-card"><b><%= @friend.bio%><b></p>
+      <p class="detail-card"><%= @friend.nickname%>'s favorites games :<br></p>
+
+      <ul class="detail-card">
+      <% @user_games.each_with_index do |history, index| %>
+        <li>
+        <% @game_detail = @game_details[index] %>
+        <%= @game_detail["name"] %>
+        </li>
+
+      <% end %>
+      </ul>
     </div>
   </div>
+</div>
+
+<div class="container-chat">
+  <div class="container chatroom"
+    data-controller="chatroom-subscription"
+    data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
+    data-chatroom-subscription-current-user-id-value="<%= current_user.id %>">
+
+  <h1><%= @chatroom.name %>'s Chatroom</h1>
+
+  <div class="messages" data-chatroom-subscription-target="messages">
+    <% @chatroom.messages.each do |message| %>
+      <div class="message-row d-flex <%= message.sender?(current_user) ? 'justify-content-end' : 'justify-content-start' %>">
+      <div class="<%= message.sender?(current_user) ? 'sender-style' : 'receiver-style' %>">
+        <%= render "messages/message", message: message %>
+      </div>
+      </div>
+    <% end %>
   </div>
-
-  <%# BUTTON CHAT %>
-  <%= link_to "Chat with '#{@friend.nickname}", chatroom_path(@chatroom.id)%>
-
-  <%# POST %>
-  <div class="container-post">
-  <% @friend.posts.each do |post| %>
-      <p><b>by</b> <%= post.user.nickname %> </p>
-      <p><b>posted at</b> <%= post.created_at %> </p>
-      <p><%= post.content %> </p>
+  <%= simple_form_for [@chatroom, @message],
+    html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" } } do |f| %>
+      <%= f.input :content,
+        label: false,
+        placeholder: "Write your message here",
+        wrapper_html: {class: "flex-grow-1"}
+      %>
+      <%= f.submit "Send", class: "btn btn-primary mb-3"%>
   <% end %>
-  </div>
 </div>

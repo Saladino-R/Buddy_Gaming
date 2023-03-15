@@ -11,13 +11,14 @@
 }
 
 .container-chat{
-  width: 70%;
+  width: 80%;
   margin:auto;
   border-radius: 10px;
   border: solid;
-  border-color: #03ff744f;
-  background-color: #0000001f;
+  border: 1px solid rgba(62, 106, 255,0.5);
+  background-color:rgba(62, 107, 255, 0.099);
   padding: 20px;
+  margin-bottom: 50px;
 }
 
 // To style the message itself
@@ -32,8 +33,10 @@
 .sender-style {
   background-color: $green;
   color:black;
+  font-weight: 500;
 }
 
 .receiver-style {
   background-color: $blue;
+  font-weight: 500;
 }
