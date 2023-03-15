@@ -18,6 +18,12 @@ class PagesController < ApplicationController
       chatrooms = Chatroom.where(friend_id: current_user.id).where(user_id: @friend.id)
     end
     @chatroom = chatrooms.first
+
+    # Historique du friend
+    @user_games = UserGame.where(user_id: @friend.id)
+    @game_details = @user_games.map do |user_game|
+      call_api(user_game.game_id)
+    end
   end
 
   def dashboard

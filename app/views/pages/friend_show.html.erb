@@ -14,8 +14,18 @@
       <p class="detail-card"><b>Age</b> <%= @friend.user_age%></p>
       <p class="detail-card"><b>From</b> <%= @friend.city%></p>
       <p class="detail-card"><b><%= @friend.bio%><b></p>
+      <p class="detail-card"><%= @friend.nickname%>'s favorites games :<br></p>
+      <ul class="detail-card">
+      <% @user_games.each_with_index do |history, index| %>
+        <li>
+        <% @game_detail = @game_details[index] %>
+        <%= @game_detail["name"] %>
+        </li>
+      <% end %>
+      </ul>
       <%#= link_to "Chat with '#{@friend.nickname}", chatroom_path(@chatroom.id)%>
     </div>
+
 
     <div class="container-post">
       <% @friend.posts.each do |post| %>
