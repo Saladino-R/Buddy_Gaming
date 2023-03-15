@@ -2,26 +2,22 @@
 
 <div class="swiper-slide">
   <div class="container mx-auto mt-4">
-    <%# <div class="row"> %>
-      <%# <div class="col-md-4"> %>
-        <div class="card-choice">
-          <div class="img-container">
-            <% if user_game.user.photo.attached? %>
-              <%= cl_image_tag user_game.user.photo.key %>
-            <%else %>
-              <%= image_tag "https://res.cloudinary.com/dcd4fkkhk/image/upload/v1678717126/No-Image_uhbhk5.png"%>
-            <% end %>
-          </div>
-          <div class="card-body">
-            <h5 class="card-title"><%= user_game.user.nickname %> - <%= user_game.user.user_age %> yo</h5>
-            <h5 class="card-subtitle mb-2"> <b>from</b> <%= user_game.user.city %></h5>
-            <p class="card-text"><%= user_game.user.bio %></p>
-            <%= simple_form_for [user_game, @friendship] do |f| %>
-              <%= f.button :submit, 'Be my buddy', class:'btn-card' %>
-            <% end %>
-          </div>
-        </div>
-      <%# </div> %>
-    <%# </div> %>
+    <div class="card-choice">
+      <div class="img-container">
+        <% if user_game.user.photo.attached? %>
+          <%= cl_image_tag user_game.user.photo.key %>
+        <%else %>
+          <%= image_tag "https://res.cloudinary.com/dcd4fkkhk/image/upload/v1678717126/No-Image_uhbhk5.png"%>
+        <% end %>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"><%= user_game.user.nickname %> - <%= user_game.user.user_age %> yo</h5>
+        <h5 class="card-subtitle mb-2"> <b>from</b> <%= user_game.user.city %></h5>
+        <p class="card-text"><%= user_game.user.bio %></p>
+        <%= simple_form_for [user_game, @friendship] do |f| %>
+          <%= f.button :submit, 'Be my buddy', class:'btn-card' %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
