@@ -29,17 +29,6 @@
 
       <% end %>
       </ul>
-      <%#= link_to "Chat with '#{@friend.nickname}", chatroom_path(@chatroom.id)%>
-    </div>
-
-
-    <div class="container-post">
-      <% @friend.posts.each do |post| %>
-          <p><b>by</b> <%= post.user.nickname %> </p>
-          <p><b>posted at</b> <%= post.created_at %> </p>
-          <p><%= post.content %> </p>
-      <% end %>
-      </ul>
     </div>
   </div>
 </div>
@@ -60,18 +49,14 @@
       </div>
       </div>
     <% end %>
-
   </div>
-
-  <%# BUTTON CHAT %>
-  <%= link_to "Chat with '#{@friend.nickname}", chatroom_path(@chatroom.id)%>
-
-  <%# POST %>
-  <div class="container-post">
-  <% @friend.posts.each do |post| %>
-      <p><b>by</b> <%= post.user.nickname %> </p>
-      <p><b>posted at</b> <%= post.created_at %> </p>
-      <p><%= post.content %> </p>
+  <%= simple_form_for [@chatroom, @message],
+    html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" } } do |f| %>
+      <%= f.input :content,
+        label: false,
+        placeholder: "Write your message here",
+        wrapper_html: {class: "flex-grow-1"}
+      %>
+      <%= f.submit "Send", class: "btn btn-primary mb-3"%>
   <% end %>
-  </div>
 </div>
