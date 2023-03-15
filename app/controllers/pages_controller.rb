@@ -17,6 +17,12 @@ class PagesController < ApplicationController
       chatrooms = Chatroom.where(friend_id: current_user.id).where(user_id: @friend.id)
     end
     @chatroom = chatrooms.first
+
+    # Historique du friend
+    @user_games = UserGame.where(user_id: @friend.id)
+    @game_details = @user_games.map do |user_game|
+      call_api(user_game.game_id)
+    end
   end
 
   def dashboard
@@ -28,10 +34,10 @@ class PagesController < ApplicationController
     # @friends_list = @received_friends_r +  @sent_friends_r
 
     # Historique de jeu
-    @histories = current_user.user_games
-    @game_details = @histories.map do |user_game|
-      call_api(user_game.game_id)
-    end
+    # @histories = current_user.user_game
+    # @game_details = @histories.map do |user_game|
+    #   call_api(user_game.game_id)
+    # end
   end
 
   private
@@ -43,6 +49,6 @@ class PagesController < ApplicationController
     url = "https://api.rawg.io/api/games/#{game_id}?key=#{key}"
     games_serialized = URI.open(url).read
     # Parsing json de l'api
-    games = JSON.parse(games_serialized)
+    JSON.parse(games_serialized)
   end
 end
