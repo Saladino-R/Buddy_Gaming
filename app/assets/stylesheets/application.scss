@@ -21,7 +21,12 @@
 
 
 body {
-  background: url('https://res.cloudinary.com/dcd4fkkhk/image/upload/v1678377849/sl_0210121_40570_43_mrvzet.jpg') no-repeat center center fixed;
+  background:linear-gradient(
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.8)
+  ),
+  url('https://res.cloudinary.com/dcd4fkkhk/image/upload/v1678893919/5148675_olo25o.jpg') fixed;
+
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
