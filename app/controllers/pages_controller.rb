@@ -37,10 +37,10 @@ class PagesController < ApplicationController
     # @friends_list = @received_friends_r +  @sent_friends_r
 
     # Historique de jeu
-    @histories = current_user.user_games
-    @game_details = @histories.map do |user_game|
-      call_api(user_game.game_id)
-    end
+    # @histories = current_user.user_game
+    # @game_details = @histories.map do |user_game|
+    #   call_api(user_game.game_id)
+    # end
   end
 
   private
@@ -52,6 +52,6 @@ class PagesController < ApplicationController
     url = "https://api.rawg.io/api/games/#{game_id}?key=#{key}"
     games_serialized = URI.open(url).read
     # Parsing json de l'api
-    games = JSON.parse(games_serialized)
+    JSON.parse(games_serialized)
   end
 end
