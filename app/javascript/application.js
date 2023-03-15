@@ -7,7 +7,7 @@ import {swiperCard} from "./components/_swiper_card";
 import { searchBar } from "./components/_search_bar";
 //FOR NEW FRIEND REQUEST: to do a POST with with a link_to(usually only for GETs)
 import { Turbo } from "@hotwired/turbo-rails"
-// Turbo.session.drive = false
+Turbo.session.drive = false
 
 selectGame()
 swiperCard()
