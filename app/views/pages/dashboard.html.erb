@@ -52,16 +52,46 @@
     </div>
     <div class="container-post">
       <h5>Friends News:</h5>
+        <% @all_posts.each do |post| %>
+          <ul>
+            <li>
+               <div class="card-post">
+                 <div class = "container-top">
+                    <div class="card-post-border-top">
+                      <% if post.user_id == current_user.id %>
+                        <%= button_to "Delete post",
+                            post_path(post.id), method: :delete, class: 'btn btn-post' %>
+                       <% end %>
+                      <div class="img-post">
+                      <% if post.user.photo.attached? %>
+                      <%= cl_image_tag post.user.photo.key %>
+                      <%else %>
+                      <%= image_tag "https://res.cloudinary.com/dcd4fkkhk/image/upload/v1678717126/No-Image_uhbhk5.png"%>
+                      <% end %>
+                      </div>
+                   <span><%= post.user.nickname %></span>
+                <p><%= post.created_at.to_s(:short) %></p>
+                  </div>
+                </div>
 
-      <% @all_posts.each do |post| %>
-        <p><b>by</b> <%= post.user.nickname %> </p>
-        <p><b>posted at</b> <%= post.created_at %> </p>
-        <p><%= post.content %> </p>
-        <% if post.user_id == current_user.id %>
-          <%= button_to "Delete post",
-                post_path(post.id), method: :delete, class: 'btn btn-post' %>
+                <p class="post"> <%= post.content %></p>
+                <button> like
+                </button>
+              </div>
+            </li>
+          </ul>
         <% end %>
-      <% end %>
+
+        // <h5>Friends News:</h5>
+        <%# @all_posts.each do |post| %>
+          <p><b>by</b> <%#= post.user.nickname %> </p>
+          <p><b>posted at</b> <%#= post.created_at %> </p>
+          <p><%#= post.content %> </p>
+          <%# if post.user_id == current_user.id %>
+            <%#= button_to "Delete post",
+                  post_path(post.id), method: :delete, class: 'btn btn-post' %>
+          <%# end %>
+        <%# end %>
+      </div>
     </div>
-  </div>
 </div>

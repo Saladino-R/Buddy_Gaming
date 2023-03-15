@@ -51,6 +51,15 @@
   font-size:  larger;
 }
 
-// .container-detail {
-//   justify-content: flex-end;
-// }
+.container-detail {
+  padding:10px;
+  width: 450px;
+  height: 250px
+}
+.history{
+  height: 250px;
+  border-left: 2px solid $blue;
+  border-left-style: groove;
+  padding-left: 20px;
+  padding-top: 10px;
+}
