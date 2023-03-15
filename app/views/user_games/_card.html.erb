@@ -1,10 +1,12 @@
-<ul class='list-games'>
-  <% @games.first(5).each do |game| %>
-  <li class='card1 m-1 game-card' data-id=<%= game["id"] %>>
-    <div class="card2">
-    <%= image_tag(game["background_image"])%>
-    <%= game["name"] %>
-    </div>
-  </li>
-  <% end %>
-</ul>
+<div class="container-card">
+  <ul class='list-games'>
+    <% @games.first(5).each do |game| %>
+    <li class='card1 m-1 game-card' data-id=<%= game["id"] %>>
+      <div class="card2">
+      <%= image_tag(game["background_image"])%>
+      <%= game["name"] %>
+      </div>
+    </li>
+    <% end %>
+  </ul>
+</div>

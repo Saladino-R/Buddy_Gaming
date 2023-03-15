@@ -51,7 +51,7 @@
       <% end %>
     </div>
     <div class="container-post">
-    <h5>Friends News:</h5>
+      <h5>Friends News:</h5>
 
       <% @all_posts.each do |post| %>
         <p><b>by</b> <%= post.user.nickname %> </p>
@@ -62,24 +62,6 @@
                 post_path(post.id), method: :delete, class: 'btn btn-post' %>
         <% end %>
       <% end %>
+    </div>
   </div>
-
-  <div class="container-history">
-    <h5>My history</h5>
-    <ul>
-      <% @histories.each_with_index do |history, index| %>
-      <li>
-      <% @game_detail = @game_details[index] %>
-      <%# <%= image_tag(@game_detail["background_image"]) %>
-      <%= @game_detail["name"] %>
-      <%= history.language %>
-      <%= history.level %>
-      <%= history.mood %>
-      <%= history.mode %>
-      <%= history.console %>
-      </li>
-      <% end %>
-    </ul>
-  </div>
-</div>
 </div>
