@@ -21,6 +21,9 @@
     </div>
   </div>
   </div>
+<%# It doesn't work, @friendship_id is not correct %>
+<%#= button_to "REMOVE", friendship_path(@friendship_id , confirm: false), method: :delete, class: 'btn btn-post'%>
+
 
   <%# BUTTON CHAT %>
   <%= link_to "Chat with '#{@friend.nickname}", chatroom_path(@chatroom.id)%>

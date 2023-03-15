@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   # root "articles#index"
   get "dashboard", to: "pages#dashboard"
   get "/friend/:id", to: "pages#friend_show", as:"friend"
+  delete "/friend/:id/delete", to: "friendships#destroy"
+
+
   resources :user_games, only: %i[new create] do
     get "/results", to: "user_games#results"
     post "/friendships", to: "friendships#create"

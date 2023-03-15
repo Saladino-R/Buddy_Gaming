@@ -20,22 +20,24 @@
       <% @requests.each do |request| %>
         <% if User.find(request.friend_id) == current_user %>
           <p><%= User.find(request.user_id).nickname%> sent you a friend request</p>
-          <%= button_to "CONFIRM", friendship_path(request.id, confirm: true), method: :patch %>
-          <%= button_to "DELETE", friendship_path(request.id, confirm: false), method: :patch %>
+          <%= button_to "CONFIRM", friendship_path(request.id, confirm: true), method: :patch, class: 'btn btn-post' %>
+          <%= button_to "REMOVE", friendship_path(request.id, confirm: false), method: :patch, class: 'btn btn-post'%>
         <% end %>
       <% end %>
 
       <h5>All my friends</h5>
         <%# 'Method friends in user model' %>
       <% current_user.friends.each do |friend| %>
-      <%= link_to friend.nickname, friend_path(friend.id) %>
-
+        <ul>
+          <li>
+            <%= link_to friend.nickname, friend_path(friend.id) %>
+          </li>
+        </ul>
         <%# <% if friend.photo.attached? %>
           <%# <%= cl_image_tag friend.photo.key %>
         <%# <%else %>
           <%# <%= image_tag('https://res.cloudinary.com/dcd4fkkhk/image/upload/v1678717126/No-Image_uhbhk5.png')%>
         <%# <% end %>
-
       <% end %>
     </div>
   </div>
@@ -51,7 +53,7 @@
     <div class="container-post">
     <h5>Friends News:</h5>
 
-      <% @posts.each do |post| %>
+      <% @all_posts.each do |post| %>
         <p><b>by</b> <%= post.user.nickname %> </p>
         <p><b>posted at</b> <%= post.created_at %> </p>
         <p><%= post.content %> </p>
