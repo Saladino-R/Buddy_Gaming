@@ -3,7 +3,6 @@
   height: 60vh;
   display: flex;
   justify-content: center;
-  text-align: center;
   align-items: center;
 }
 /* === removing default button style ===*/
@@ -17,7 +16,7 @@
 
 /* button styling */
 .button {
-  --border-right: 6px;
+  // --border-right: 6px;
   --text-stroke-color: rgba(255,255,255,0.6);
   --animation-color:rgb(3, 255, 116);
   --fs-size: 4em;
@@ -47,4 +46,17 @@
 .button:hover .hover-text {
   width: 100%;
   filter: drop-shadow(0 0 23px var(--animation-color))
+}
+
+.left-logo{
+  height: 80%;
+  img{
+    height: 100%;
+  }
+}
+.right-logo{
+  height: 80%;
+  img{
+    height: 100%;
+  }
 }
