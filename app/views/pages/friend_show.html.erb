@@ -53,9 +53,6 @@
 
   </div>
 
-  <%# BUTTON CHAT %>
-  <%= link_to "Chat with '#{@friend.nickname}", chatroom_path(@chatroom.id)%>
-
   <%# POST %>
   <div class="container-post">
   <% @friend.posts.each do |post| %>
