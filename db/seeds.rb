@@ -34,7 +34,7 @@
   date13 = Date.new(2002, 12, 16)
   date14 = Date.new(1979, 5, 18)
   date15 = Date.new(1991, 3, 5)
-  date16 = Date.new(2009, 2, 1)
+  date16 = Date.new(1993, 2, 1)
   date17 = Date.new(1998, 9, 27)
   date18 = Date.new(1985, 8, 7)
   date19 = Date.new(1976, 1, 29)
@@ -192,7 +192,6 @@
 #USERS___________________________________________________________________
 
 #FRIENDSHIP___________________________________________________________________
-
   # puts 'Creating FRIENDSHIPS'
   # friendship1 = Friendship.create( user_id: 1, friend_id: 2)
   # friendship2 = Friendship.create( user_id: 1, friend_id: 3)

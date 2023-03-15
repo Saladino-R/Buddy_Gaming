@@ -1,8 +1,11 @@
 <%# -------------- Navbar -------------------- %>
 <div class="container-homepage">
-<%= link_to new_user_game_path do %>
-<button data-text="Awesome" class="button">
-      <span class="actual-text">&nbsp;GOBUDDY&nbsp;</span>
-      <span class="hover-text" aria-hidden="true">&nbsp;GOBUDDY&nbsp;</span>
-  </button>    <% end %>
+  <div class="left-logo"><%= image_tag "https://res.cloudinary.com/dcd4fkkhk/image/upload/v1678865311/Logo_left_gtmtr8.png"%></div>
+  <%= link_to new_user_game_path do %>
+    <button data-text="Awesome" class="button">
+          <span class="actual-text">&nbsp;GOBUDDY&nbsp;</span>
+          <span class="hover-text" aria-hidden="true">&nbsp;GOBUDDY&nbsp;</span>
+    </button>
+  <% end %>
+  <div class="right-logo"><%= image_tag "https://res.cloudinary.com/dcd4fkkhk/image/upload/v1678865314/Logo_right_s9qtrc.png"%></div>
 </div>
