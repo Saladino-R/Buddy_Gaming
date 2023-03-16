@@ -35,12 +35,6 @@ class PagesController < ApplicationController
     # @received_friends_r = Friendship.where(friend_id: current_user.id).where(confirm: true)
     # @sent_friends_r = Friendship.where(user_id: current_user.id).where(confirm: true)
     # @friends_list = @received_friends_r +  @sent_friends_r
-
-    # Historique de jeu
-    # @histories = current_user.user_game
-    # @game_details = @histories.map do |user_game|
-    #   call_api(user_game.game_id)
-    # end
   end
 
   private
