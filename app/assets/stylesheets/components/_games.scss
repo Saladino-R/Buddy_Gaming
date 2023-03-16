@@ -2,6 +2,25 @@
   // background-color: #1A1E21;
   color: white;
   margin: auto;
+  width: 80%;
+  overflow: hidden;
+  .swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 250px;
+    height: 250px;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+  }
 }
 
 .list-games {
