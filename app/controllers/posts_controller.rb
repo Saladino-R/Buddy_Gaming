@@ -6,7 +6,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to dashboard_path
     else
-      render :new, status: :unprocessable_entity
+      redirect_to dashboard_path
     end
   end
 
