@@ -203,6 +203,22 @@
   # friendship8 = Friendship.create( user_id: 2, friend_id: 5)
   # puts "Done #{Friendship.count}"
 #FRIENDSHIP___________________________________________________________________
+Friendship.create(friend_id: user2.id, user_id: user26.id)
+Friendship.create(friend_id: user2.id, user_id: user23.id)
+Friendship.create(friend_id: user2.id, user_id: user13.id)
+Friendship.create(friend_id: user2.id, user_id: user10.id)
+Friendship.create(friend_id: user2.id, user_id: user1.id)
+
+Friendship.create(friend_id: user16.id, user_id: user1.id)
+Friendship.create(friend_id: user16.id, user_id: user29.id)
+Friendship.create(friend_id: user16.id, user_id: user31.id)
+Friendship.create(friend_id: user16.id, user_id: user12.id)
+Friendship.create(friend_id: user16.id, user_id: user15.id)
+Friendship.create(friend_id: user16.id, user_id: user6.id)
+Friendship.create(friend_id: user16.id, user_id: user28.id)
+Friendship.create(friend_id: user16.id, user_id: user8.id)
+
+
 
 
 #USERGAMES___________________________________________________________________
@@ -217,5 +233,25 @@
   UserGame.create(user_id: user8.id, game_id: 3498, language: 'French', level: 'Casual', mode: '1on1', mood: "Chill", console: 'PS4')
   UserGame.create(user_id: user9.id, game_id: 3498, language: 'French', level: 'Casual', mode: '1on1', mood: "Chill", console: 'PS4')
   UserGame.create(user_id: user10.id, game_id: 3498, language: 'French', level: 'Casual', mode: '1on1', mood: "Chill", console: 'PS4')
+  UserGame.create(user_id: user28.id, game_id: 3328, language: 'French', level: 'Casual', mode: '1on1', mood: "Chill", console: 'PS4')
+  UserGame.create(user_id: user28.id, game_id: 457048, language: 'French', level: 'Casual', mode: '1on1', mood: "Chill", console: 'PS4')
+  UserGame.create(user_id: user28.id, game_id: 678989, language: 'French', level: 'Casual', mode: '1on1', mood: "Chill", console: 'PS4')
+  UserGame.create(user_id: user28.id, game_id: 154231, language: 'French', level: 'Casual', mode: '1on1', mood: "Chill", console: 'PS4')
+  UserGame.create(user_id: user28.id, game_id: 3498, language: 'French', level: 'Casual', mode: '1on1', mood: "Chill", console: 'PS4')
+  UserGame.create(user_id: user12.id, game_id: , language: 'French', level: 'Casual', mode: '1on1', mood: "Chill", console: 'PS4')
+  UserGame.create(user_id: user12.id, game_id: 154231, language: 'French', level: 'Casual', mode: '1on1', mood: "Chill", console: 'PS4')
+  UserGame.create(user_id: user12.id, game_id: 3498, language: 'French', level: 'Casual', mode: '1on1', mood: "Chill", console: 'PS4')
+
+  UserGame.create(user_id: user15.id, game_id: 678989, language: 'French', level: 'Casual', mode: '1on1', mood: "Chill", console: 'PS4')
+  UserGame.create(user_id: user15.id, game_id: 3498, language: 'French', level: 'Casual', mode: '1on1', mood: "Chill", console: 'PS4')
+  UserGame.create(user_id: user15.id, game_id: 154231, language: 'French', level: 'Casual', mode: '1on1', mood: "Chill", console: 'PS4')
+  UserGame.create(user_id: user15.id, game_id: 457048, language: 'French', level: 'Casual', mode: '1on1', mood: "Chill", console: 'PS4')
+
+  UserGame.create(user_id: user27.id, game_id: 457048, language: 'French', level: 'Casual', mode: '1on1', mood: "Chill", console: 'PS4')
+  UserGame.create(user_id: user27.id, game_id: 3498, language: 'French', level: 'Casual', mode: '1on1', mood: "Chill", console: 'PS4')
+  UserGame.create(user_id: user27.id, game_id: 678989, language: 'French', level: 'Casual', mode: '1on1', mood: "Chill", console: 'PS4')
+  UserGame.create(user_id: user27.id, game_id: 154231, language: 'French', level: 'Casual', mode: '1on1', mood: "Chill", console: 'PS4')
+
+
   puts "Done #{UserGame.count}"
 #USERGAMES___________________________________________________________________
