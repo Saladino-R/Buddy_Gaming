@@ -34,4 +34,5 @@ class FriendshipsController < ApplicationController
     #  end
     redirect_to dashboard_path
   end
+
 end
