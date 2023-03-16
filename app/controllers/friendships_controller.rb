@@ -23,12 +23,4 @@ class FriendshipsController < ApplicationController
 
     redirect_to dashboard_path, notice: "#{@friendship_request.user.nickname} and you are now friends"
   end
-
-  # def destroy
-  #   @friendship_id = @friend.friendships.where(user_id: @friend.id).where(friend_id: current_user.id)
-  #   if params[:confirm] == "false"
-  #     @friendship_request.confirm = false
-  #     @friendship_request.destroy
-  #   end
-  # end
 end
