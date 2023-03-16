@@ -5,12 +5,20 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+  get "dashboard", to: "pages#dashboard"
+
+  get "/friend/:id", to: "pages#friend_show", as: "friend"
+
+  delete "/friend/:id", to: "friendships#destroy", as: "delete_friend"
+
   resources :pages, only: %i[dashboard friend_show destroy]
   get "dashboard", to: "pages#dashboard"
 
   get "/friend/:id", to: "pages#friend_show", as: "friend" do
     delete "/friend/:id", to: "pages#destroy"
   end
+
 
   resources :user_games, only: %i[new create] do
     get "/results", to: "user_games#results"

@@ -18,60 +18,75 @@
       <h5 class="title-dash">All my friends</h5>
         <%# 'Method friends in user model' %>
       <% current_user.friends.each do |friend| %>
-      <h5> <%= link_to friend.nickname, friend_path(friend.id) %> </h5>
+        <div class="friend-profile">
+          <div class="img-post">
+            <% if friend.photo.attached? %>
+            <%= cl_image_tag friend.photo.key %>
+            <%else %>
+            <%= image_tag "https://res.cloudinary.com/dcd4fkkhk/image/upload/v1678717126/No-Image_uhbhk5.png"%>
+            <% end %>
+            </div>
+          <h5 id="name-friend"> <%= link_to friend.nickname, friend_path(friend.id) %> </h5>
+        </div>
       <% end %>
 
       <h5 class="title-dash">Friend request</h5>
       <% @requests.each do |request| %>
         <% if User.find(request.friend_id) == current_user %>
           <p><%= User.find(request.user_id).nickname%> sent you a friend request</p>
-          <%= button_to "CONFIRM", friendship_path(request.id, confirm: true), method: :patch, class: 'btn btn-post' %>
-          <%= button_to "REMOVE", friendship_path(request.id, confirm: false), method: :patch, class: 'btn btn-post'%>
+          <div class="btn-confirm">
+            <%= button_to "CONFIRM", friendship_path(request.id, confirm: true), method: :patch, class: 'btn btn-post' %>
+            <%= button_to "REMOVE", friendship_path(request.id, confirm: false), method: :patch, class: 'btn btn-post'%>
+          </div>
         <% end %>
       <% end %>
     </div>
   </div>
 
   <div class="container-right">
-      <h3>New post</h3>
     <div class="container-newpost">
+      <h3>New post</h3>
+      <%# <div class="form-post"> %>
         <%= simple_form_for(@post) do |f| %>
-          <div class="form-post">
-            <div class="cont"><%= f.input :content %></div>
-            <div class="btn-post"><%= f.button :submit %></div>
-          </div>
+            <%= f.input :content, placeholder: 'post something...', label: false %>
+            <%= f.input :photo, as: :file, label: false %>
+            <div class="cont-submit">
+              <%= f.button :submit %>
+            </div>
         <% end %>
+      <%# </div> %>
     </div>
     <div class="container-post">
       <h5>Friends News:</h5>
         <% @all_posts.each do |post| %>
-          <ul>
-            <li>
-              <div class="card-post">
-                <div class = "container-top">
-                    <div class="card-post-border-top">
-                      <% if post.user_id == current_user.id %>
-                        <%= button_to "Delete post",
-                            post_path(post.id), method: :delete, class: 'btn btn-post' %>
-                      <% end %>
-                      <div class="img-post">
-                      <% if post.user.photo.attached? %>
-                      <%= cl_image_tag post.user.photo.key %>
-                      <%else %>
-                      <%= image_tag "https://res.cloudinary.com/dcd4fkkhk/image/upload/v1678717126/No-Image_uhbhk5.png"%>
-                      <% end %>
-                      </div>
-                    <span><%= post.user.nickname %></span>
-                <p><%= post.created_at.to_s(:short) %></p>
-                  </div>
+          <div class="card-post">
+            <div class = "container-top">
+              <div class="container-top-left">
+                <div class="img-post">
+                  <% if post.user.photo.attached? %>
+                  <%= cl_image_tag post.user.photo.key %>
+                  <%else %>
+                  <%= image_tag "https://res.cloudinary.com/dcd4fkkhk/image/upload/v1678717126/No-Image_uhbhk5.png"%>
+                  <% end %>
                 </div>
-
-                <p class="post"> <%= post.content %></p>
-                <button> like
-                </button>
+                <div class="top-name"><p><%= post.user.nickname %><p></div>
               </div>
-            </li>
-          </ul>
+             <div class="top-date"><p><i><%= post.created_at.to_s(:short) %></i></p></div>
+            </div>
+            <div class="photo-post">
+              <% if post.photo.key? %>
+                <p><%= cl_image_tag post.photo.key %></p>
+              <% end %>
+            </div>
+            <div class="post-content"><p><%= post.content %></p></div>
+            <div class="container-bottom">
+              <% if post.user_id == current_user.id %>
+                <%= button_to "Delete post",
+                  post_path(post.id), method: :delete, class: 'btn btn-post' %>
+              <% end %>
+            <button class='btn btn-post love'> like ❤️ </button>
+            </div>
+          </div>
         <% end %>
       </div>
     </div>
