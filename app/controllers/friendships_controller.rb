@@ -24,11 +24,15 @@ class FriendshipsController < ApplicationController
     redirect_to dashboard_path, notice: "#{@friendship_request.user.nickname} and you are now friends"
   end
 
-  # def destroy
-  #   @friendship_id = @friend.friendships.where(user_id: @friend.id).where(friend_id: current_user.id)
-  #   if params[:confirm] == "false"
-  #     @friendship_request.confirm = false
-  #     @friendship_request.destroy
-  #   end
-  # end
+  def destroy
+    my_friend = User.find(params[:id])
+    friendships = Friendship.where(user_id: current_user.id).where(friend_id: my_friend.id)
+    friendships = Friendship.where(user_id: my_friend.id).where(friend_id: current_user.id) if friendships.empty?
+    friendships.destroy_all
+    #  friendship_ids = my_friend.friendships.map do |user_id, friend_id|
+    #    user_id = my_friend.id && friend_id = current_user.id
+    #  end
+    redirect_to dashboard_path
+  end
+
 end

@@ -16,6 +16,8 @@
       <h4>From <%= @friend.city%></h4>
       <h5 class="title-dash">About <%= @friend.nickname%> :</h5>
       <h6><%= @friend.bio%></h6>
+      <%#DELETE FRIEND %>
+    <%= button_to "Remove friend", delete_friend_path(@friend.id),  method: :delete, class: 'btn btn-post' %>
     </div>
     <div class="detail-card history">
       <h2><%= @friend.nickname%>'s last choice:</h2>
@@ -45,6 +47,7 @@
       </div>
     <% end %>
   </div>
+
   <%= simple_form_for [@chatroom, @message],
     html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" } } do |f| %>
       <%= f.input :content,
