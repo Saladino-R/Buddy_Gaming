@@ -1,5 +1,5 @@
 <div class="container-games">
-  <h1 class='text-center'>Choose your preferences 🎮</h1>
+  <h1 class='text-center'>Make your choice</h1>
   <div class="form-usergames">
     <%= simple_form_for @user_game do |f| %>
       <%= render "user_games/card", games: @games %>
@@ -12,7 +12,7 @@
         <%= f.input :console, collection: ["PC", "PS4", "PS5", "Xbox One", "Xbox 360"] %>
         <%= f.input :game_id, label:false, input_html: { class: 'd-none' } %>
         <div class="btn-submit" style="text-align: center">
-          <%= f.button :submit, button_html: { class: 'btn-form'} %>
+          <%= f.button :submit, 'Find my buddy', button_html: { class: 'btn-form'} %>
         </div>
       </div>
     <% end %>
