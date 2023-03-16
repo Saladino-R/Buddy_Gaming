@@ -210,13 +210,13 @@ Friendship.create(friend_id: user2.id, user_id: user10.id)
 Friendship.create(friend_id: user2.id, user_id: user1.id)
 
 Friendship.create(friend_id: user16.id, user_id: user1.id)
-Friendship.create(friend_id: user16.id, user_id: user29.id)
-Friendship.create(friend_id: user16.id, user_id: user31.id)
+Friendship.create(friend_id: user16.id, user_id: user9.id)
+Friendship.create(friend_id: user16.id, user_id: user3.id)
 Friendship.create(friend_id: user16.id, user_id: user12.id)
 Friendship.create(friend_id: user16.id, user_id: user15.id)
 Friendship.create(friend_id: user16.id, user_id: user6.id)
-Friendship.create(friend_id: user16.id, user_id: user28.id)
 Friendship.create(friend_id: user16.id, user_id: user8.id)
+Friendship.create(friend_id: user16.id, user_id: user20.id)
 
 
 
