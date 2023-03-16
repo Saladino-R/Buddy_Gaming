@@ -64,6 +64,7 @@
   color: $blue;
 }
 
+
 .photo-post {
   width: 50%;
   height: 50%;
@@ -96,7 +97,10 @@
 .container-post{
   // background-color: rgb(220, 212, 0);
   margin-top: 10px;
-  border-top: 2px solid $blue ;
+  // border-top: 2px solid $blue ;
+  h5{
+    color: white;
+  }
 }
 .btn-post{
   font-size: 10px;

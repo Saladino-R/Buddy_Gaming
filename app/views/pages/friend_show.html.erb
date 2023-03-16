@@ -17,7 +17,9 @@
       <h5 class="title-dash">About <%= @friend.nickname%> :</h5>
       <h6><%= @friend.bio%></h6>
       <%#DELETE FRIEND %>
-    <%= button_to "Remove friend", delete_friend_path(@friend.id),  method: :delete, class: 'btn btn-post' %>
+      <div class="btn-delete">
+        <%= button_to "Remove friend", delete_friend_path(@friend.id),  method: :delete, class: 'btn btn-post' %>
+      </div>
     </div>
     <div class="detail-card history">
       <h2><%= @friend.nickname%>'s last choice:</h2>
