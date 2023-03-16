@@ -30,7 +30,7 @@ class PagesController < ApplicationController
     @post = Post.new
     friends_posts = Post.all.where(user_id: current_user.friends)
     my_posts = Post.all.where(user_id: current_user.id)
-    @all_posts = (friends_posts + my_posts)
+    @all_posts = (friends_posts + my_posts).sort_by(&:created_at).reverse
     @requests = Friendship.where(friend_id: current_user.id).where(confirm: nil)
     # @received_friends_r = Friendship.where(friend_id: current_user.id).where(confirm: true)
     # @sent_friends_r = Friendship.where(user_id: current_user.id).where(confirm: true)
