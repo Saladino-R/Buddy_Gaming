@@ -1,12 +1,11 @@
 class PostsController < ApplicationController
-
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
     if @post.save
       redirect_to dashboard_path
     else
-      render :new, status: :unprocessable_entity
+      redirect_to dashboard_path
     end
   end
 

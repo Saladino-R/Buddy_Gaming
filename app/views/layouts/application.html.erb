@@ -3,8 +3,17 @@
   <head>
     <title>BuddyGaming</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title><%= meta_title %></title>
+    <meta name="description" content="<%= meta_description %>">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <meta property="og:title" content="<%= meta_title %>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<%= request.original_url %>" />
+    <meta property="og:image" content="<%= meta_image %>" />
+    <meta property="og:description" content="<%= meta_description %>" />
+    <meta property="og:site_name" content="<%= meta_title %>" />
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
@@ -12,8 +21,7 @@
     <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
     <%= favicon_link_tag asset_path('logo_bg.png') %>
     <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
-/>
+          href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
   </head>
 
   <body>

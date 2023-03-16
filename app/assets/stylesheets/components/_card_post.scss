@@ -1,64 +1,58 @@
 .card-post {
-  width: 500px;
-  height: 220px;
-  background-image: linear-gradient(144deg,#2421b5, #492fed 60%,#40b259);
-  border: none;
-  position: relative;
-  margin: auto;
-  font-family: inherit;
+  width: 80%;
+
+  background-image: linear-gradient(144deg,#2321b582, #482fed6c 60%,#40b2597f);
+  border: 1px solid $blue;
+  margin: 20px auto;
   border-radius: 15px;
- }
+}
 
  .container-top {
   display: flex;
   justify-content: space-between;
- }
- .card-post span {
-  font-weight: 600;
-  color: white;
-  text-align: center;
-  display: block;
-  padding-top: 10px;
-  font-size: 1.3em;
- }
-
- .card-post .post {
-  font-weight: 400;
-  color: white;
-  display: block;
-  text-align: center;
-  padding-top: 5px;
-  font-size: 1em;
- }
-
- .card-post-border-top{
-  display: flex;
-  justify-content: space-evenly;
- }
- .card-post-border-top img {
-  width: 70px;
-  height: 70px;
-  background: #e8e8e8;
-  border-radius: 100%;
-  margin: auto;
+  align-items: center;
   margin-top: 10px;
-  margin-left: 10px;
-  margin-bottom: 0px;
- }
+  margin-bottom: 10px;
+}
+.container-top-left{
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  padding-top :10px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+}
 
- .card-post button {
-  padding: 8px 25px;
-  display: block;
-  margin: auto;
-  border-radius: 8px;
-  border: none;
-  margin-top: 30px;
-  background: #e8e8e8;
-  color: #111111;
-  font-weight: 600;
- }
+.img-post img {
+ width: 50px;
+ height: 50px;
+ border-radius: 100%;
+}
 
- .card-post button:hover {
-  background: #212121;
-  color: #ffffff;
- }
+.top-name p{
+  margin: 0;
+}
+.top-date{
+  margin-right: 20px;
+  p{
+    margin: 0;
+    font-size: small;
+  }
+}
+.post-content{
+  background-color:rgba(3, 255, 116, 0.099);
+  border-radius: 15px;
+  padding: 5px;
+  margin: auto 10px;
+}
+
+.container-bottom{
+  margin-top: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: right;
+  column-gap: 21px;
+  padding-right: 15px;
+
+
+}
