@@ -11,18 +11,31 @@
 }
 
 .container-left{
-  border-right: 2px solid $blue;
   border-right-style: groove;
-  padding-right: 20px;
+  padding: 20px;
   width: 20%;
+  border: 1px solid rgba(62, 106, 255,0.5);
+  background-color:rgba(62, 107, 255, 0.099);
+  border-radius: 15px;
 }
 .container-profil{
-  // background-color: greenyellow;
+  h1{
+    color: $green;
+  }
+  h6{
+    font-size: initial;
+    line-height: 1.5;
+  }
+}
+.title-dash{
+  color: $green; ;
+  padding-top: 10px;
 }
 
 .container-profil img{
-  width: 100px;
+  width: 50%;
   margin-bottom: 20px;
+  border-radius: 15px;
 
 }
 
@@ -37,14 +50,16 @@
 
 .container-right{
   width: 60%;
-  border:2px solid $blue;
+  border: 1px solid rgba(62, 106, 255,0.5);
+  background-color:rgba(62, 107, 255, 0.099);
+  border-radius: 15px;
 }
 
 .container-newpost{
-  // background-color: rgb(182, 47, 255);
-  width: 60%;
- margin:auto;
+ padding-inline: 10%;
+
 }
+
 
 .container-post{
   // background-color: rgb(220, 212, 0);

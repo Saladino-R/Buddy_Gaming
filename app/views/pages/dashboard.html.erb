@@ -1,22 +1,27 @@
 <div class="container-dashboard">
   <div class="container-left">
     <div class="container-profil">
-      <h1>My profile</h1>
+      <h1><%= current_user.nickname %></h1>
         <% if current_user.photo.attached? %>
           <%= cl_image_tag current_user.photo.key %>
         <%else %>
           <%= image_tag "https://res.cloudinary.com/dcd4fkkhk/image/upload/v1678717126/No-Image_uhbhk5.png"%>
         <% end %>
-      <h2><%= current_user.nickname %></h2>
-      <h6>From <%= current_user.city %></h6>
-      <h6>Age <%= current_user.user_age %></h6>
-      <p><b>About me</b></p>
-      <p><%= current_user.bio %></p>
+      <h4><%= current_user.city %> <i><%= current_user.user_age %> yo</i></h4>
+
+      <h5 class="title-dash"> About me <h5>
+      <h6><%= current_user.bio %><h6>
     </div>
 
     <br>
     <div class="container-friend">
-      <h5>Friend request</h5>
+      <h5 class="title-dash">All my friends</h5>
+        <%# 'Method friends in user model' %>
+      <% current_user.friends.each do |friend| %>
+       <h5> <%= link_to friend.nickname, friend_path(friend.id) %> </h5>
+      <% end %>
+
+      <h5 class="title-dash">Friend request</h5>
       <% @requests.each do |request| %>
         <% if User.find(request.friend_id) == current_user %>
           <p><%= User.find(request.user_id).nickname%> sent you a friend request</p>
@@ -24,31 +29,18 @@
           <%= button_to "REMOVE", friendship_path(request.id, confirm: false), method: :patch, class: 'btn btn-post'%>
         <% end %>
       <% end %>
-
-      <h5>All my friends</h5>
-        <%# 'Method friends in user model' %>
-      <% current_user.friends.each do |friend| %>
-        <ul>
-          <li>
-            <%= link_to friend.nickname, friend_path(friend.id) %>
-          </li>
-        </ul>
-        <%# <% if friend.photo.attached? %>
-          <%# <%= cl_image_tag friend.photo.key %>
-        <%# <%else %>
-          <%# <%= image_tag('https://res.cloudinary.com/dcd4fkkhk/image/upload/v1678717126/No-Image_uhbhk5.png')%>
-        <%# <% end %>
-      <% end %>
     </div>
   </div>
 
   <div class="container-right">
+      <h3>New post</h3>
     <div class="container-newpost">
-      <h1>New post</h1>
-      <%= simple_form_for(@post) do |f| %>
-        <%= f.input :content %>
-        <%= f.button :submit %>
-      <% end %>
+        <%= simple_form_for(@post) do |f| %>
+          <div class="form-post">
+            <div class="cont"><%= f.input :content %></div>
+            <div class="btn-post"><%= f.button :submit %></div>
+          </div>
+       <% end %>
     </div>
     <div class="container-post">
       <h5>Friends News:</h5>
