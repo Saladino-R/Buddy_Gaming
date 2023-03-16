@@ -3,7 +3,7 @@
 //  import Swiper from 'swiper';
 
 export const swiperCard = () => {
-  const swiperContainer = document.querySelector('.swiper')
+  const swiperContainer = document.querySelector('#tinder')
   if (swiperContainer){
     const swiper = new Swiper(".mySwiper", {
       navigation: {
