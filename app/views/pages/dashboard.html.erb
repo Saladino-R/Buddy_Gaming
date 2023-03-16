@@ -32,13 +32,15 @@
 
       <h5 class="title-dash">Friend request</h5>
       <% @requests.each do |request| %>
-        <% if User.find(request.friend_id) == current_user %>
-          <p><%= User.find(request.user_id).nickname%> sent you a friend request</p>
-          <div class="btn-confirm">
-            <%= button_to "CONFIRM", friendship_path(request.id, confirm: true), method: :patch, class: 'btn btn-post' %>
-            <%= button_to "REMOVE", friendship_path(request.id, confirm: false), method: :patch, class: 'btn btn-post'%>
-          </div>
-        <% end %>
+        <div class="request">
+          <% if User.find(request.friend_id) == current_user %>
+            <p><%= User.find(request.user_id).nickname%> added you</p>
+            <div class="btn-confirm">
+              <%= button_to "confirm", friendship_path(request.id, confirm: true), method: :patch, class: 'btn btn-post' %>
+              <%= button_to "delete", friendship_path(request.id, confirm: false), method: :patch, class: 'btn btn-post'%>
+            </div>
+          <% end %>
+        </div>
       <% end %>
     </div>
   </div>

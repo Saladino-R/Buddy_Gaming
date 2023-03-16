@@ -15,13 +15,14 @@ class FriendshipsController < ApplicationController
     if params[:confirm] == "true"
       @friendship_request.confirm = true
       Chatroom.create(friend_id: current_user.id, user_id: @friendship_request.user_id, name: "#{current_user.nickname} & #{@friendship_request.user.nickname}")
+      @friendship_request.save
+      redirect_to dashboard_path, notice: "#{@friendship_request.user.nickname} and you are now friends"
     else
       @friendship_request.confirm = false
+      @friendship_request.save
+      redirect_to dashboard_path, notice: "#{@friendship_request.user.nickname} REFUSÉ"
     end
     # ^ If we press the button "DELETE", we only change the value of confirm: to "false", but we still save the friendship request in our DB
-    @friendship_request.save
-
-    redirect_to dashboard_path, notice: "#{@friendship_request.user.nickname} and you are now friends"
   end
 
   def destroy

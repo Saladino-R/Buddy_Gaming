@@ -11,7 +11,7 @@
         <% end %>
       </div>
       <div class="card-body">
-        <h5 class="card-title"><%= user_game.user.nickname %> - <%= user_game.user.user_age %> yo</h5>
+        <h5 class="card-title"><%= user_game.user.nickname %> - <%= user_game.user.user_age %> y.o.</h5>
         <h5 class="card-subtitle mb-2"> <b>from</b> <%= user_game.user.city %></h5>
         <p class="card-text"><%= user_game.user.bio %></p>
         <%= simple_form_for [user_game, @friendship] do |f| %>
