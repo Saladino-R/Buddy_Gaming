@@ -11,18 +11,18 @@
   </div>
 
     <div class="container-detail">
-      <h3 class='name-show'><%= @friend.nickname%></h3>
-      <br>
-      <p class="detail-card"><b>Age</b> <%= @friend.user_age%></p>
-      <p class="detail-card"><b>From</b> <%= @friend.city%></p>
-      <p class="detail-card"><b><%= @friend.bio%><b></p>
+      <h2><%= @friend.nickname%> Profil</h3>
+      <h4><%= @friend.user_age%> yo</h4>
+      <h4>From <%= @friend.city%></h4>
+      <h5 class="title-dash">About <%= @friend.nickname%> :</h5>
+      <h6><%= @friend.bio%></h6>
     </div>
     <div class="detail-card history">
-      <h3 class='name-show'><%= @friend.nickname%>'s last choice:<br></h3>
+      <h2><%= @friend.nickname%>'s last choice:</h2>
 
       <% @user_games.each_with_index do |history, index| %>
-        <p><% @game_detail = @game_details[index] %></p>
-        <%= @game_detail["name"] %>
+        <h6><% @game_detail = @game_details[index] %></h6>
+          <%= @game_detail["name"] %>
       <% end %>
       </div>
   </div>

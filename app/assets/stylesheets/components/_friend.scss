@@ -4,10 +4,6 @@
   margin: 40px auto;
 }
 
-.space-between {
-  justify-content: space-between;
-}
-
 .card-show {
   height: 100%;
   width: 100%;
@@ -21,8 +17,6 @@
   -webkit-box-shadow: 1px 1px 16px -6px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 1px 1px 16px -6px rgba(0, 0, 0, 0.5);
 }
-
-
 
 .img-show {
   object-fit: cover;
@@ -39,22 +33,21 @@
     object-fit: cover;
     overflow: hidden;
     border-radius: 15px;
-}
-}
-.name-show {
-  font-weight: 500;
-  font-size: xx-large;
-}
-
-.detail-card {
-  font-weight: 300;
-  font-size:  larger;
+  }
 }
 
 .container-detail {
   padding:10px;
   width: 450px;
-  height: 250px
+  height: 250px;
+  margin-left:20px;
+  h2{
+    color: $green;
+  }
+  h6{
+    font-size: initial;
+    line-height: 1.5;
+  }
 }
 .history{
   height: 250px;
@@ -62,4 +55,12 @@
   border-left-style: groove;
   padding-left: 20px;
   padding-top: 10px;
+  margin-left:20px;
+  h2{
+    color: $green;
+  }
+  h6{
+    font-size: initial;
+    line-height: 1.5;
+  }
 }
