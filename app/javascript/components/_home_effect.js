@@ -11,6 +11,12 @@ export const homeEffect= () => {
       left.classList.add("move-left")
       right.classList.add("move-right")
       btnhome.style.opacity=0
+      // const audio = new Audio("https://res.cloudinary.com/dcd4fkkhk/video/upload/v1679047162/wet-fart-6139_tedd7d.mp3");
+      const audio = new Audio("https://res.cloudinary.com/dcd4fkkhk/video/upload/v1679047692/laser_xw1fx3.m4a");
+      console.log(audio);
+      audio.play();
+
+
       setTimeout(function(){ window.location = btnhome.href; }, 700)
 
     })
