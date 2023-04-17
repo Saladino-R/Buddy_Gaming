@@ -233,11 +233,7 @@ Friendship.create(friend_id: user16.id, user_id: user9.id)
   UserGame.create(user_id: user8.id, game_id: 823549, language: 'French', level: 'Casual', mode: '1on1', mood: "Chill", console: 'PS4')
   UserGame.create(user_id: user9.id, game_id: 823549, language: 'French', level: 'Casual', mode: '1on1', mood: "Chill", console: 'PS4')
   UserGame.create(user_id: user10.id, game_id: 823549, language: 'French', level: 'Casual', mode: '1on1', mood: "Chill", console: 'PS4')
-<<<<<<< HEAD
   UserGame.create(user_id: user20.id, game_id: 823549, language: 'French', level: 'Casual', mode: '1on1', mood: "Chill", console: 'PS4')
-=======
-  UserGame.create(user_id: user20.id, game_id: 3328, language: 'French', level: 'Casual', mode: '1on1', mood: "Chill", console: 'PS4')
->>>>>>> 5f9f962580aa0caf195a7ef68fba414d045d6324
   UserGame.create(user_id: user20.id, game_id: 457048, language: 'French', level: 'Casual', mode: '1on1', mood: "Chill", console: 'PS4')
   UserGame.create(user_id: user20.id, game_id: 678989, language: 'French', level: 'Casual', mode: '1on1', mood: "Chill", console: 'PS4')
   UserGame.create(user_id: user20.id, game_id: 154231, language: 'French', level: 'Casual', mode: '1on1', mood: "Chill", console: 'PS4')
