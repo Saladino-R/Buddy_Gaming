@@ -37,8 +37,8 @@ class UserGamesController < ApplicationController
     # Rejecting an array of the matches profiles to whom I've already sent a friend request
     # so I don't dispaly them again in the results.html.erb
     @filter_matches = @matches.reject do |m|
-      current_user.friends.include?(m.user) || current_user.friendships.pluck(:friend_id).include?(m.user_id)
-      #in the friendships array, I select(".pluck") the matches where the user_id = the friend_id, and i put them in a new array
+      current_user.friends.include?(m.user) || m.user.friendships.pluck(:friend_id).include?(current_user.id)
+      #in the friendships array, I select(".pluck") the matches where the current_user.id = the friend_id, and i put them in a new array (the people that haveve already sent a friend request)
     end
   end
 
