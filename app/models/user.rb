@@ -29,10 +29,7 @@ class User < ApplicationRecord
     return friends
   end
 
-  def user_age
-    age = Date.today.year - self.birthday.year
-    return age
-  end
+
 
   def user_age
     now = Time.now.utc.to_date
